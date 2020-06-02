@@ -1,0 +1,35 @@
+<h1>Buttons</h1>
+<p id="other"
+   height="1000px">Type Other</p>
+<p-fieldset legend="Buttons-Default"
+            [toggleable]="true"
+            [collapsed]="true">
+   <div class="pattern-usage">
+      <strong>HTML:</strong>
+      <pre class="">
+<code class="language-markup" [innerHTML]="html | safeHtml">
+</code>
+</pre>
+   </div>
+   <div class="pattern-usage">
+      <strong>CSS:</strong>
+      <pre class="">
+         <code class="language-css" [innerHTML]="css">
+      </code>
+   </pre>
+   </div>
+</p-fieldset>
+
+<div class="pattern-preview">
+   <button class="btn"
+           type="button">Button</button>
+   <button type="submit"
+           class="btn">Submit button</button>
+   <a class="btn">Link button</a>
+   <input type="button"
+          value="Input button"
+          class="btn">
+   <input type="submit"
+          value="Input submit button"
+          class="btn">
+</div>

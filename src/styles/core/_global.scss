@@ -1,0 +1,62 @@
+/* Global styles */
+
+// ::selection {
+// background: $very-light-grey;
+// color: $black;
+// text-shadow: 0px 1px 1px rgba(black, 0.6);
+// }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 10px/ 10rem
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $font-default;
+  font-size: 1.4rem;
+  font-weight: $font-weight-normal;
+  line-height: $lh-default;
+  color: $body-color;
+  background-color: $body-bg;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(var(--black), 0); // 4
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  &:hover,
+  &:active {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+}
+.pattern-preview {
+  padding: 10px 0;
+  width: auto;
+  overflow: hidden;
+}
