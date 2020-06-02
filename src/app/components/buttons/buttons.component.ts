@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { PrismService } from 'src/app/shared/prism.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { PrismService } from 'src/app/shared/prism.service';
   templateUrl: './buttons.component.html',
   styleUrls: ['./buttons.component.scss'],
 })
-export class ButtonsComponent implements OnInit {
+export class ButtonsComponent implements OnInit, AfterViewInit {
   html = `
 <button class="btn"
         type="button">Button</button>
@@ -45,7 +45,11 @@ export class ButtonsComponent implements OnInit {
   `;
 
   constructor(private prismService: PrismService) {}
+
   ngOnInit(): void {
     this.html = this.prismService.highlightJs(this.html);
+  }
+  ngAfterViewInit() {
+    this.prismService.highlightAll();
   }
 }

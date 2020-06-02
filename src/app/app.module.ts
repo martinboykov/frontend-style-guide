@@ -7,9 +7,10 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsComponent } from './components/forms/forms.component';
 import { FieldsetModule } from 'primeng/fieldset';
+import { CodeForAmericaComponent } from './components/buttons/code-for-america/code-for-america.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonsComponent, FormsComponent],
+  declarations: [AppComponent, ButtonsComponent, FormsComponent, CodeForAmericaComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

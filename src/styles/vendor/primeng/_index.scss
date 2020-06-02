@@ -1,0 +1,38 @@
+body .ui-menubar .ui-menuitem.ui-menuitem > .ui-menuitem-link,
+body .ui-fieldset .ui-fieldset-legend a {
+  background-color: $layer-0 !important;
+  color: $text-color !important;
+  .ui-menuitem-text,
+  .ui-submenu-icon,
+  .ui-fieldset-toggler {
+    color: $text-color !important;
+  }
+}
+body
+  .ui-menubar-root-list
+  > .ui-menuitem.ui-menuitem
+  > .ui-menuitem-link-active,
+body .ui-fieldset .ui-fieldset-legend a[aria-expanded="true"] {
+  background-color: $primary-color-hover !important;
+  color: $primary-color-text !important;
+  .ui-menuitem-text,
+  .ui-submenu-icon,
+  .ui-fieldset-toggler {
+    color: $primary-color-text !important;
+  }
+}
+body .ui-menubar .ui-menuitem.ui-menuitem > .ui-menuitem-link,
+body .ui-fieldset .ui-fieldset-legend a,
+body .ui-menubar .ui-menuitem-link.ui-corner-all.ui-menuitem-link-active,
+body .ui-menubar .ui-menuitem.ui-menuitem-active > .ui-menuitem-link {
+  &:hover,
+  &:active {
+    background-color: $primary-color-hover !important;
+    color: $primary-color-text !important;
+    .ui-menuitem-text,
+    .ui-submenu-icon,
+    .ui-fieldset-toggler {
+      color: $primary-color-text !important;
+    }
+  }
+}

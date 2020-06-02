@@ -30,9 +30,9 @@ export class HeaderComponent implements OnInit {
             routerLinkActiveOptions: 'active',
           },
           {
-            label: 'Type Other',
+            label: 'Code of America Style Guide',
             routerLink: '/buttons',
-            fragment: 'other',
+            fragment: 'code-of-america',
             routerLinkActiveOptions: 'active',
           },
         ],
