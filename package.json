@@ -5,13 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "clean": "rimraf ./dist",
-    "build:prod": "ng build --prod",
-    "test": "ng test --watch=false --browsers=ChromeHeadlessCustom",
-    "test:watch": "ng test",
+    "deploy": "ng deploy",
+    "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "build:ci": "npm run clean && npm run test && npm run build:prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -48,7 +45,6 @@
     "karma-jasmine": "~3.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~5.4.3",
-    "puppeteer": "^3.3.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
