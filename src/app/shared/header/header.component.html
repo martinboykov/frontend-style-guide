@@ -1,3 +1,10 @@
 <header class="container">
-  <p-menubar [model]="items"></p-menubar>
+  <p-menubar [model]="items">
+    <!-- <button pButton
+            label="Color switch"
+            icon="pi pi-cog"
+            (click)="changeColors()"></button> -->
+    <p-inputSwitch (onChange)="changeColors()"
+                   [(ngModel)]="switchVal"></p-inputSwitch>
+  </p-menubar>
 </header>

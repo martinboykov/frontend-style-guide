@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MenuItem } from 'primeng/api';
+import { Injectable, Inject } from '@angular/core';
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +13,12 @@ import { MenuItem } from 'primeng/api';
 export class HeaderComponent implements OnInit {
   items: MenuItem[];
   orientation: string;
-  window;
   windowWidth: number;
-  constructor() {}
+  switchVal: boolean;
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
 
   ngOnInit() {
+    this.switchVal = false;
     this.orientation = 'horizontal';
     this.items = [
       {
@@ -58,5 +62,19 @@ export class HeaderComponent implements OnInit {
         ],
       },
     ];
+  }
+  changeColors() {
+    if (isPlatformBrowser(this.platformId)) {
+      const root = document.documentElement;
+      if (this.switchVal) {
+        root.style.setProperty('--theme-color-400', 'var(--green)');
+        root.style.setProperty('--theme-color', 'var(--green)');
+        root.style.setProperty('--theme-color-600', 'var(--green)');
+      } else {
+        root.style.setProperty('--theme-color-400', 'var(--blue)');
+        root.style.setProperty('--theme-color', 'var(--blue)');
+        root.style.setProperty('--theme-color-600', 'var(--blue)');
+      }
+    }
   }
 }
