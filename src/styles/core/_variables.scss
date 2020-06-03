@@ -19,6 +19,7 @@ $lh-default: 1.5 !default;
 // primeng colors
 $white: #fff;
 $black: #000;
+$grey: #c8c8c8;
 $layer-0: $white;
 $layer-1: #f5f7f8;
 $text-color-black: #333333;
@@ -27,9 +28,9 @@ $text-color-grey: #848484;
 $blue: #007ad9;
 $blue-400: lighten($blue, 10%);
 $blue-600: darken($blue, 10%);
-$green: adjust-hue($blue, -40deg);
-$green-400: lighten($green, 10%);
-$green-600: darken($green, 10%);
+$red: adjust-hue($blue, 140deg);
+$red-400: lighten($red, 10%);
+$red-600: darken($red, 10%);
 
 :root {
   --theme-color-400: #{inspect($blue-400)};

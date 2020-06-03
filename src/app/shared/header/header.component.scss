@@ -1,0 +1,60 @@
+@import "./core/variables";
+@import "./core/root";
+
+:host ::ng-deep {
+  /*
+   * Menu navigation
+   */
+  .ui-menubar {
+    border: none;
+  }
+  .ui-menubar .ui-menubar-custom {
+    padding: 0.9rem 0.9rem 0 0;
+  }
+  .ui-menubar .ui-menuitem.ui-menuitem > .ui-menuitem-link {
+    background-color: $layer-0;
+    color: $text-color-black;
+    .ui-menuitem-text,
+    .ui-submenu-icon {
+      color: $text-color-black;
+    }
+  }
+  .ui-menubar-root-list > .ui-menuitem.ui-menuitem > .ui-menuitem-link-active {
+    background-color: $theme-color;
+    color: $text-color-white;
+    .ui-menuitem-text,
+    .ui-submenu-icon {
+      color: $text-color-white;
+    }
+  }
+  .ui-menuitem.ui-menuitem > .ui-menuitem-link,
+  .ui-menuitem-link.ui-corner-all.ui-menuitem-link-active,
+  .ui-menuitem.ui-menuitem-active > .ui-menuitem-link {
+    &:hover,
+    &:active {
+      background-color: $theme-color;
+      color: $text-color-white;
+      .ui-menuitem-text,
+      .ui-submenu-icon {
+        color: $text-color-white;
+      }
+    }
+  }
+
+  /*
+   * Menu theme - switch
+   */
+  .ui-inputswitch:not(.ui-state-disabled) .ui-inputswitch-slider,
+  .ui-inputswitch.ui-inputswitch-checked:not(.ui-state-disabled)
+    .ui-inputswitch-slider
+    .ui-inputswitch-checked:not(.ui-state-disabled) {
+    background: $theme-color !important;
+  }
+  .ui-inputswitch-checked:not(.ui-state-disabled):hover .ui-inputswitch-slider,
+  .ui-inputswitch:not(.ui-state-disabled):hover .ui-inputswitch-slider,
+  .ui-inputswitch.ui-inputswitch-checked:not(.ui-state-disabled):hover
+    .ui-inputswitch-slider
+    .ui-inputswitch-checked:not(.ui-state-disabled) {
+    background: $theme-color-600 !important;
+  }
+}

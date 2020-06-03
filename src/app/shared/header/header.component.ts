@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { MenuItem } from 'primeng/api';
-import { Injectable, Inject } from '@angular/core';
-import { PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { ThemeService } from '../theme.service';
+
 
 @Component({
   selector: 'app-header',
@@ -15,7 +13,7 @@ export class HeaderComponent implements OnInit {
   orientation: string;
   windowWidth: number;
   switchVal: boolean;
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit() {
     this.switchVal = false;
@@ -27,12 +25,12 @@ export class HeaderComponent implements OnInit {
         routerLinkActiveOptions: 'active',
         expanded: true,
         items: [
-          {
-            label: 'Type Bootstrap',
-            routerLink: '/buttons',
-            fragment: 'bootstrap',
-            routerLinkActiveOptions: 'active',
-          },
+          // {
+          //   label: 'Type Bootstrap',
+          //   routerLink: '/buttons',
+          //   fragment: 'bootstrap',
+          //   routerLinkActiveOptions: 'active',
+          // },
           {
             label: 'Code of America Style Guide',
             routerLink: '/buttons',
@@ -64,17 +62,6 @@ export class HeaderComponent implements OnInit {
     ];
   }
   changeColors() {
-    if (isPlatformBrowser(this.platformId)) {
-      const root = document.documentElement;
-      if (this.switchVal) {
-        root.style.setProperty('--theme-color-400', 'var(--green)');
-        root.style.setProperty('--theme-color', 'var(--green)');
-        root.style.setProperty('--theme-color-600', 'var(--green)');
-      } else {
-        root.style.setProperty('--theme-color-400', 'var(--blue)');
-        root.style.setProperty('--theme-color', 'var(--blue)');
-        root.style.setProperty('--theme-color-600', 'var(--blue)');
-      }
-    }
+    this.themeService.switchTheme(this.switchVal);
   }
 }

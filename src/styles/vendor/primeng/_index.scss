@@ -1,59 +1,29 @@
-body .ui-menubar .ui-menuitem.ui-menuitem > .ui-menuitem-link,
-body .ui-fieldset .ui-fieldset-legend a {
-  background-color: $layer-0 !important;
-  color: $text-color-black !important;
-  .ui-menuitem-text,
-  .ui-submenu-icon,
-  .ui-fieldset-toggler {
-    color: $text-color-black !important;
-  }
-}
-body
-  .ui-menubar-root-list
-  > .ui-menuitem.ui-menuitem
-  > .ui-menuitem-link-active,
-body .ui-fieldset .ui-fieldset-legend a[aria-expanded="true"] {
+
+/*
+   * Fieldset
+   */
+.ui-fieldset .ui-fieldset-legend a {
   background-color: $theme-color !important;
   color: $text-color-white !important;
-  .ui-menuitem-text,
-  .ui-submenu-icon,
   .ui-fieldset-toggler {
     color: $text-color-white !important;
   }
 }
-body .ui-menubar .ui-menuitem.ui-menuitem > .ui-menuitem-link,
-body .ui-fieldset .ui-fieldset-legend a,
-body .ui-menubar .ui-menuitem-link.ui-corner-all.ui-menuitem-link-active,
-body .ui-menubar .ui-menuitem.ui-menuitem-active > .ui-menuitem-link {
+.ui-fieldset .ui-fieldset-legend a[aria-expanded="true"] {
+  background-color: $theme-color !important;
+  color: $text-color-white !important;
+  .ui-fieldset-toggler {
+    color: $text-color-white !important;
+  }
+}
+.ui-fieldset.ui-fieldset-toggleable .ui-fieldset-legend a {
   &:hover,
   &:active {
-    background-color: $theme-color !important;
+    background-color: $theme-color-600 !important;
     color: $text-color-white !important;
-    .ui-menuitem-text,
-    .ui-submenu-icon,
+
     .ui-fieldset-toggler {
       color: $text-color-white !important;
     }
   }
-}
-
-.ui-menubar .ui-menubar-custom {
-  padding: 0.9rem 0.9rem 0 0 !important ;
-}
-
-body
-  .ui-inputswitch.ui-inputswitch-checked:not(.ui-state-disabled)
-  .ui-inputswitch-slider {
-  background-color: $theme-color !important;
-}
-body
-  .ui-inputswitch.ui-inputswitch-checked:not(.ui-state-disabled):hover
-  .ui-inputswitch-slider {
-  background-color: $theme-color-600 !important;
-}
-body .ui-inputswitch:not(.ui-state-disabled) .ui-inputswitch-slider {
-  background-color: $theme-color !important;
-}
-body .ui-inputswitch:not(.ui-state-disabled):hover .ui-inputswitch-slider {
-  background-color: $theme-color-600 !important;
 }

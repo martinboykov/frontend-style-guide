@@ -1,0 +1,17 @@
+@import "./core/variables";
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid $grey;
+  border-bottom: 1px solid $grey;
+  z-index: 9999;
+  &.container {
+    padding: 0;
+  }
+}
+main {
+  padding-top: 4.5rem;
+}
