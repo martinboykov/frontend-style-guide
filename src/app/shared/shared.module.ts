@@ -19,7 +19,7 @@ import { FormsModule } from '@angular/forms';
     MenubarModule,
     ButtonModule,
     InputSwitchModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [HeaderComponent, SafeHtmlPipe],
 })

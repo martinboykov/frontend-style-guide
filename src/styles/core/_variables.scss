@@ -33,11 +33,11 @@ $red-400: lighten($red, 10%);
 $red-600: darken($red, 10%);
 
 :root {
-  --theme-color-400: #{inspect($blue-400)};
-  --theme-color: #{inspect($blue)};
-  --theme-color-600: #{inspect($blue-600)};
-  --theme-text-primary: #{inspect($text-color-black)};
-  --theme-text-secondary: #{inspect($text-color-white)};
+  --theme-color-400: #{$blue-400};
+  --theme-color: #{$blue};
+  --theme-color-600: #{$blue-600};
+  --theme-text-primary: #{$text-color-black};
+  --theme-text-secondary: #{$text-color-white};
 }
 
 $theme-color-400: var(--theme-color-400);
@@ -47,3 +47,9 @@ $theme-color-600: var(--theme-color-600);
 $body-bg: $layer-0 !default;
 $body-color: $text-color-black !default;
 $body-text-align: null !default;
+
+// breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 960px;
+$xl: 1200px;

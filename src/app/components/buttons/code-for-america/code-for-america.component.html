@@ -1,35 +1,52 @@
-<section id="code-of-america" class="section-start"></section>
-  <h2 class="fragment">Code of America Style Guide</h2>
-  <p-fieldset legend="Buttons-Default"
+<section id="code-of-america"
+         class="section-start"></section>
+<h2 class="fragment">Code of America Style Guide</h2>
+<p-fieldset legend="Buttons-Default"
               [toggleable]="true"
               [collapsed]="true">
-    <div class="pattern-usage">
-      <strong>HTML:</strong>
-      <pre class="">
-<code class="language-markup" [innerHTML]="html">
-</code>
-</pre>
-    </div>
-    <div class="pattern-usage">
-      <strong>CSS:</strong>
-      <pre class="language-css">
-         <code class="language-css" [innerHTML]="css">
+              <div>
+                <strong>HTML:</strong>
+                <pre>
+                  <code class="language-markup" [innerHTML]="html">
+                  </code>
+            </pre>
+              </div>
+              <div>
+                <strong>CSS:</strong>
+                <pre>
+                  <code class="language-css" [innerHTML]="css">
+                  </code>
+              </pre>
+              </div>
+</p-fieldset>
+<!-- <p-panel [toggleable]="true"
+         [collapsed]="true">
+  <div>
+    <strong>HTML:</strong>
+    <pre>
+      <code class="language-markup" [innerHTML]="html">
       </code>
-   </pre>
-    </div>
-  </p-fieldset>
-
-  <div class="pattern-preview">
-    <button class="btn"
-            type="button">Button</button>
-    <button type="submit"
-            class="btn">Submit button</button>
-    <a class="btn">Link button</a>
-    <input type="button"
-           value="Input button"
-           class="btn">
-    <input type="submit"
-           value="Input submit button"
-           class="btn">
+</pre>
   </div>
+  <div>
+    <strong>CSS:</strong>
+    <pre>
+      <code class="language-css" [innerHTML]="css">
+      </code>
+  </pre>
+  </div>
+</p-panel> -->
 
+<div class="pattern-preview">
+  <button class="btn"
+          type="button">Button</button>
+  <button type="submit"
+          class="btn">Submit button</button>
+  <a class="btn">Link button</a>
+  <input type="button"
+         value="Input button"
+         class="btn">
+  <input type="submit"
+         value="Input submit button"
+         class="btn">
+</div>

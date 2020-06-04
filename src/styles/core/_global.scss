@@ -13,17 +13,20 @@
 }
 
 html {
-  font-size: 62.5%; // 10px/ 10rem
   height: 100%;
+
+  font-size: 62.5%; // 10px/ 10rem
 }
 
 body {
   margin: 0;
+
   font-family: $font-default;
   font-size: 1.4rem;
   font-weight: $font-weight-normal;
   line-height: $lh-default;
   color: $body-color;
+
   background-color: $body-bg;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba($layer-0, 0); // 4
@@ -47,22 +50,30 @@ a {
 ul {
   margin: 0;
   padding: 0;
+
   list-style: none;
 }
 
 .container {
-  width: 100%;
-  max-width: 100%;
-  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1rem auto 1rem;
 }
 .pattern-preview {
-  padding: 1rem 0;
   width: auto;
+  padding: 1rem 0;
+
   overflow: hidden;
 }
 
 .section-start {
-  height: .1rem;
+  height: 0.1rem;
   margin: -5rem 0 5rem;
+
   visibility: hidden;
+}
+
+.main {
+  > *:nth-child(2) {
+    grid-column: 2/3;
+  }
 }

@@ -134,7 +134,9 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
-          "options": {}
+          "options": {
+            "baseHref": "/frontend-style-guide/"
+          }
         }
       }
     }

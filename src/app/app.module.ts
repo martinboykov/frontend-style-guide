@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsComponent } from './components/forms/forms.component';
 import { FieldsetModule } from 'primeng/fieldset';
 import { CodeForAmericaComponent } from './components/buttons/code-for-america/code-for-america.component';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   declarations: [AppComponent, ButtonsComponent, FormsComponent, CodeForAmericaComponent],
@@ -17,6 +18,7 @@ import { CodeForAmericaComponent } from './components/buttons/code-for-america/c
     AppRoutingModule,
     SharedModule,
     FieldsetModule,
+    PanelModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,14 +1,14 @@
 :root {
-  --layer-0: #{inspect($layer-0)};
-  --layer-1: #{inspect($layer-1)};
-  --text-color-black: #{inspect($text-color-black)};
-  --text-color-white: #{inspect($text-color-white)};
-  --text-color-grey: #{inspect($text-color-grey)};
-  --blue: #{inspect($blue)};
-  --blue-400: #{inspect($blue-400)};
-  --blue-600: #{inspect($blue-600)};
+  --layer-0: #{$layer-0};
+  --layer-1: #{$layer-1};
+  --text-color-black: #{$text-color-black};
+  --text-color-white: #{$text-color-white};
+  --text-color-grey: #{$text-color-grey};
+  --blue: #{$blue};
+  --blue-400: #{$blue-400};
+  --blue-600: #{$blue-600};
 
-  --red: #{inspect($red)};
-  --red-400: #{inspect($red-400)};
-  --red-600: #{inspect($red-600)};
+  --red: #{$red};
+  --red-400: #{$red-400};
+  --red-600: #{$red-600};
 }

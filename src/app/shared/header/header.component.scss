@@ -11,12 +11,27 @@
   .ui-menubar .ui-menubar-custom {
     padding: 0.9rem 0.9rem 0 0;
   }
+  .ui-menubar .ui-menuitem.ui-menuitem {
+    min-width: max-content;
+  }
   .ui-menubar .ui-menuitem.ui-menuitem > .ui-menuitem-link {
+    width: 100%;
+    height: 5rem;
+    line-height: 5rem;
+    padding: 0 1rem;
+
+    min-width: max-content;
+
     background-color: $layer-0;
     color: $text-color-black;
+
     .ui-menuitem-text,
     .ui-submenu-icon {
       color: $text-color-black;
+    }
+    .ui-submenu-icon {
+      margin-top: 0.25em;
+      margin-left: 0.25em;
     }
   }
   .ui-menubar-root-list > .ui-menuitem.ui-menuitem > .ui-menuitem-link-active {
@@ -44,6 +59,10 @@
   /*
    * Menu theme - switch
    */
+  .switch {
+    margin-left: auto;
+    line-height: 1;
+  }
   .ui-inputswitch:not(.ui-state-disabled) .ui-inputswitch-slider,
   .ui-inputswitch.ui-inputswitch-checked:not(.ui-state-disabled)
     .ui-inputswitch-slider

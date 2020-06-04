@@ -1,29 +1,102 @@
-
 /*
-   * Fieldset
-   */
-.ui-fieldset .ui-fieldset-legend a {
-  background-color: $theme-color !important;
-  color: $text-color-white !important;
-  .ui-fieldset-toggler {
+* Fieldset
+*/
+.ui-fieldset {
+  .ui-fieldset-legend a {
+    background-color: $theme-color !important;
     color: $text-color-white !important;
-  }
-}
-.ui-fieldset .ui-fieldset-legend a[aria-expanded="true"] {
-  background-color: $theme-color !important;
-  color: $text-color-white !important;
-  .ui-fieldset-toggler {
-    color: $text-color-white !important;
-  }
-}
-.ui-fieldset.ui-fieldset-toggleable .ui-fieldset-legend a {
-  &:hover,
-  &:active {
-    background-color: $theme-color-600 !important;
-    color: $text-color-white !important;
-
     .ui-fieldset-toggler {
       color: $text-color-white !important;
+    }
+  }
+  .ui-fieldset-legend a[aria-expanded="true"] {
+    background-color: $theme-color !important;
+    color: $text-color-white !important;
+    .ui-fieldset-toggler {
+      color: $text-color-white !important;
+    }
+  }
+  &.ui-fieldset-toggleable .ui-fieldset-legend a {
+    &:hover,
+    &:active {
+      background-color: $theme-color-600 !important;
+      color: $text-color-white !important;
+
+      .ui-fieldset-toggler {
+        color: $text-color-white !important;
+      }
+    }
+  }
+
+  .ui-fieldset-content {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+
+    div {
+      position: relative;
+      overflow: auto;
+      width: 100%;
+      &:nth-child(1) {
+        grid-column: 1/2;
+      }
+      &:nth-child(2) {
+        grid-column: 2/3;
+      }
+    }
+  }
+  @media only screen and (max-width: $md) {
+    .ui-fieldset-content {
+      grid-template-columns: 1fr !important;
+      div {
+        &:nth-child(1) {
+          grid-column: auto;
+        }
+        &:nth-child(2) {
+          grid-column: auto;
+        }
+      }
+    }
+  }
+}
+
+.ui-panel {
+  .ui-panel-titlebar {
+    background-color: $theme-color !important;
+    color: $text-color-white !important;
+    .ui-panel-titlebar-icon {
+      color: $text-color-white !important;
+    }
+  }
+  .ui-panel-content {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+
+    div {
+      position: relative;
+      width: 100%;
+
+      overflow: auto;
+      &:nth-child(1) {
+        grid-column: 1/2;
+      }
+      &:nth-child(2) {
+        grid-column: 2/3;
+      }
+    }
+  }
+  @media only screen and (max-width: $md) {
+    .ui-panel-content {
+      grid-template-columns: 1fr !important;
+      div {
+        &:nth-child(1) {
+          grid-column: auto;
+        }
+        &:nth-child(2) {
+          grid-column: auto;
+        }
+      }
     }
   }
 }
