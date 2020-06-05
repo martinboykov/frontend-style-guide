@@ -1,52 +1,49 @@
-<section id="code-of-america"
-         class="section-start"></section>
-<h2 class="fragment">Code of America Style Guide</h2>
-<p-fieldset legend="Buttons-Default"
+<div class="article-types">
+  <section id="code-of-america"
+           class="section-start"></section>
+  <h2 class="fragment">Code of America Style Guide</h2>
+  <p-fieldset legend="Buttons-Default"
               [toggleable]="true"
               [collapsed]="true">
-              <div>
-                <strong>HTML:</strong>
-                <pre>
-                  <code class="language-markup" [innerHTML]="html">
-                  </code>
-            </pre>
-              </div>
-              <div>
-                <strong>CSS:</strong>
-                <pre>
-                  <code class="language-css" [innerHTML]="css">
-                  </code>
-              </pre>
-              </div>
-</p-fieldset>
-<!-- <p-panel [toggleable]="true"
-         [collapsed]="true">
-  <div>
-    <strong>HTML:</strong>
-    <pre>
+    <div class="code-wrapper">
+
+      <div class="code-container">
+        <strong>HTML:</strong>
+        <pre>
       <code class="language-markup" [innerHTML]="html">
       </code>
-</pre>
-  </div>
-  <div>
-    <strong>CSS:</strong>
-    <pre>
+    </pre>
+      </div>
+      <div class="code-container">
+        <strong>CSS:</strong>
+        <pre>
       <code class="language-css" [innerHTML]="css">
       </code>
-  </pre>
-  </div>
-</p-panel> -->
+    </pre>
+      </div>
+      <div class="code-container">
+        <strong>JS:</strong>
+        <pre>
+      <code class="language-javascript" [innerHTML]="js">
+      </code>
+    </pre>
+      </div>
+    </div>
 
-<div class="pattern-preview">
-  <button class="btn"
-          type="button">Button</button>
-  <button type="submit"
-          class="btn">Submit button</button>
-  <a class="btn">Link button</a>
-  <input type="button"
-         value="Input button"
-         class="btn">
-  <input type="submit"
-         value="Input submit button"
-         class="btn">
+  </p-fieldset>
+
+  <div class="pattern-preview">
+    <button class="btn"
+            type="button">Button</button>
+    <button type="submit"
+            class="btn">Submit button</button>
+    <a class="btn">Link button</a>
+    <input type="button"
+           value="Input button"
+           class="btn">
+    <input type="submit"
+           value="Input submit button"
+           class="btn">
+  </div>
+
 </div>

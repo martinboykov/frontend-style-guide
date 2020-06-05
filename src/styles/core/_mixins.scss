@@ -16,3 +16,18 @@
   font-size: $size;
   font-size: calculateRem($size);
 }
+
+@mixin mq($point) {
+  @if $point == $xl {
+    @media (max-width: $xl) { @content; }
+  }
+  @else if $point == $lg {
+    @media (max-width: $lg) { @content; }
+  }
+  @else if $point == $md {
+    @media (max-width: $md) { @content; }
+  }
+  @else if $point == $sm {
+    @media (max-width: $sm) { @content; }
+  }
+}

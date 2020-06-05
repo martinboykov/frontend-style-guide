@@ -1,6 +1,6 @@
 @import "./core/variables";
 
-.wp-container {
+.wp-wrapper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 5rem auto 5rem;
@@ -16,7 +16,7 @@
   grid-column: 1/-1;
   display: flex;
   flex-flow: row nowrap;
-  margin: 0 1rem;
+  padding: 0 1rem;
 
   align-items: center;
 
@@ -29,13 +29,6 @@
 .main {
   grid-column: 1/-1;
   grid-row: 2/3;
-
-  display: grid;
-  grid-template-columns: 1rem calc(100% - 2rem) 1rem;
-  width: 100%;
-  > *:nth-child(2) {
-    grid-column: 2/3;
-  }
 }
 .footer {
   grid-column: 1/-1;

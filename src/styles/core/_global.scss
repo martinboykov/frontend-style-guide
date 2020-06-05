@@ -50,30 +50,42 @@ a {
 ul {
   margin: 0;
   padding: 0;
-
   list-style: none;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1rem auto 1rem;
-}
-.pattern-preview {
-  width: auto;
-  padding: 1rem 0;
-
-  overflow: hidden;
 }
 
 .section-start {
   height: 0.1rem;
   margin: -5rem 0 5rem;
-
   visibility: hidden;
 }
 
-.main {
-  > *:nth-child(2) {
-    grid-column: 2/3;
+.article-types {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+.code-wrapper {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  .code-container {
+    overflow: hidden;
   }
+  @include mq($xl) {
+    display: block;
+  }
+  .code-toolbar {
+    height: 100%;
+  }
+  pre[class*="language-"] {
+    height: 100%;
+    max-height: 50rem;
+    border-radius: 0px;
+    overflow: auto;
+  }
+}
+.pattern-preview {
+  margin-top: 1rem;
 }
