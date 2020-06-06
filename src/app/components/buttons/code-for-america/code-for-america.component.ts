@@ -7,19 +7,22 @@ import { PrismService } from 'src/app/shared/prism.service';
   styleUrls: ['./code-for-america.component.scss'],
 })
 export class CodeForAmericaComponent implements OnInit, AfterViewInit {
+  btnState = 'Show Snippets';
+  htmlToken: string;
+
   html = `
-  <button class="btn"
-          type="button">Button</button>
-  <button type="submit"
-          class="btn">Submit button</button>
-  <a class="btn">Link button</a>
-  <input type="button"
-         value="Input button"
-         class="btn">
-  <input type="submit"
-         value="Input submit button"
-         class="btn">
-`;
+<button class="btn"
+        type="button">Button</button>
+<button type="submit"
+        class="btn">Submit button</button>
+<a class="btn">Link button</a>
+<input type="button"
+       value="Input button"
+       class="btn">
+<input type="submit"
+       value="Input submit button"
+       class="btn">
+  `;
   css = `
   .btn {
     height: 40px;
@@ -47,7 +50,11 @@ export class CodeForAmericaComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.html = this.prismService.highlightJs(this.html);
   }
+
   ngAfterViewInit() {
     this.prismService.highlightAll();
+  }
+  switchBtnState() {
+    this.btnState = this.btnState === 'Show Snippets' ? 'Hide Snippets' : 'Show Snippets';
   }
 }

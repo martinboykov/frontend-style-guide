@@ -84,6 +84,8 @@ body .wp-wrapper {
     .ui-fieldset-legend a {
       background-color: $theme-color;
       color: $text-color-white;
+      min-width: 18rem;
+      text-align: center;
       .ui-fieldset-toggler {
         color: $text-color-white;
       }

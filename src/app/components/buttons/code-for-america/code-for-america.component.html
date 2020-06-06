@@ -2,9 +2,10 @@
   <section id="code-of-america"
            class="section-start"></section>
   <h2 class="fragment">Code of America Style Guide</h2>
-  <p-fieldset legend="Buttons-Default"
+  <p-fieldset legend="{{btnState}}"
               [toggleable]="true"
-              [collapsed]="true">
+              [collapsed]="true"
+              (click)="switchBtnState()">
     <div class="code-wrapper">
 
       <div class="code-container">

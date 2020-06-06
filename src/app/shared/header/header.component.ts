@@ -20,6 +20,18 @@ export class HeaderComponent implements OnInit {
     this.orientation = 'horizontal';
     this.items = [
       {
+        label: 'Home',
+        routerLink: '/home',
+        routerLinkActiveOptions: 'active',
+        expanded: true,
+      },
+      {
+        label: 'Code Guide',
+        routerLink: '/code-guide',
+        routerLinkActiveOptions: 'active',
+        expanded: true,
+      },
+      {
         label: 'Buttons',
         routerLink: '/buttons',
         routerLinkActiveOptions: 'active',
