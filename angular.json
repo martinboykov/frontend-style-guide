@@ -135,7 +135,9 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/frontend-style-guide/"
+            "baseHref": "/frontend-style-guide/",
+            "name": "Martin Martinov",
+            "email": "m.boykov.martinov@gmail.com"
           }
         }
       }

@@ -6,7 +6,7 @@ import { PrismService } from 'src/app/shared/prism.service';
   templateUrl: './code-for-america.component.html',
   styleUrls: ['./code-for-america.component.scss'],
 })
-export class CodeForAmericaComponent implements OnInit {
+export class CodeForAmericaComponent implements OnInit, AfterViewInit {
   html = `
   <button class="btn"
           type="button">Button</button>
