@@ -70,11 +70,11 @@ ul {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  @include mq($xl) {
+    grid-template-columns: 1fr;
+  }
   .code-container {
     overflow: hidden;
-  }
-  @include mq($xl) {
-    display: block;
   }
   .code-toolbar {
     height: 100%;
