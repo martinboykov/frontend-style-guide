@@ -26,6 +26,24 @@ export class CodeGuideComponent implements OnInit, AfterViewInit {
   </body>
 </html>
 `,
+    reducing: `
+<!-- Not so great -->
+<span class="avatar">
+  <img src="...">
+</span>
+
+<!-- Better -->
+<img class="avatar" src="...">
+`,
+    order: `
+<a class="..." id="..." data-toggle="modal" href="#">
+  Example link
+</a>
+
+<input class="form-control" type="text">
+
+<img src="..." alt="...">
+`,
   };
 
   constructor(private prismService: PrismService) {}

@@ -15,7 +15,7 @@
 html {
   height: 100%;
 
-  font-size: 62.5%; // 10px/ 10rem
+  font-size: 62.5%; // 10px/ 1rem
 }
 
 body {
@@ -47,24 +47,52 @@ a {
   }
 }
 
+// Lists
+
+ol,
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  padding-left: 2rem;
 }
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+// Custom Classes
 
 .section-start {
   height: 0.01rem;
   margin: -5rem 0 5rem;
   visibility: hidden;
 }
-
+.container {
+  width: 100%;
+  max-width: $xl;
+  margin: 0 auto;
+  padding: 0rem 1rem;
+  @include mq($md) {
+    max-width: 100%;
+  }
+}
 .article-container {
   width: 100%;
   max-width: $xl;
   margin: 0 auto;
   padding: 2rem 1rem;
-  @include mq($xl) {
+  @include mq($md) {
     max-width: 100%;
   }
 }
@@ -76,22 +104,35 @@ ul {
   padding: 2rem 1rem;
 }
 
-.code-wrapper {
+.content-wrapper {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  margin-bottom: 1rem;
-  @include mq($xl) {
+  padding: 1rem 0rem;
+  @include mq($md) {
     grid-template-columns: 1fr;
   }
 }
-.col {
+
+.inner-page-heading {
+  padding-top: 5rem;
+}
+
+.g-span,
+.g-span-2 {
   width: 100%;
 }
-.col-2 {
+.g-span-2 {
   grid-column: span 2;
 }
-.code-container {
+.text {
+  padding-right: 5rem;
+  @include mq($md) {
+    padding-right: 0rem;
+  }
+}
+
+.highlight {
   overflow: hidden;
 }
 
@@ -99,9 +140,15 @@ ul {
 .code-toolbar {
 }
 pre[class*="language-"] {
-  max-height: 50rem;
   overflow: auto;
 }
 .pattern-preview {
   margin-top: 1rem;
+}
+
+.b-t {
+  border-top: 0.2rem solid $black;
+}
+.b-b {
+  border-bottom: 0.2rem solid $black;
 }

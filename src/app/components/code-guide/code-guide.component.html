@@ -1,50 +1,154 @@
-<main class="article-container">
-  <h1>Code Guide</h1>
+<div class="container">
+  <h1 class="inner-page-heading">Code Guide</h1>
   <p>This Code Guide is largely based on <a href="https://codeguide.co/">codeguide.co.</a> and <a href="https://primer.style/css/">primer.style</a> </p>
-  <div class="code-wrapper">
-    <div class="col col-2">
+</div>
+<main class="article-container">
+  <h2 class="b-b">HTML</h2>
+  <div class="content-wrapper">
+    <div class="g-span-2">
       <h3>Practicality over purity</h3>
       <p>Strive to maintain HTML standards and semantics, but not at the expense of practicality. Use the least amount of markup with the fewest intricacies whenever possible.</p>
     </div>
   </div>
-  <div class="code-wrapper">
-    <div class="col">
+  <div class="content-wrapper">
+    <div class="g-span text">
       <h3>Media query placement</h3>
       <p>Place media queries as close to their relevant rule sets whenever possible. Don't bundle them all in a separate stylesheet or at the end of the document. Doing so only makes it easier for folks to miss them in the future. Here's a typical setup.</p>
     </div>
-    <div class="col ">
+    <div class="g-span highlight">
       <pre>
         <code class="language-markup" [innerHTML]="html.syntax">
         </code>
       </pre>
     </div>
   </div>
-  <div class="code-wrapper">
-    <div>
-      <h3>Media query placement</h3>
-      <p>Place media queries as close to their relevant rule sets whenever possible. Don't bundle them all in a separate stylesheet or at the end of the document. Doing so only makes it easier for folks to miss them in the future. Here's a typical setup.</p>
+  <div class="content-wrapper">
+    <div class="g-span text">
+      <h3>Attribute order</h3>
+      <p>HTML attributes should come in this particular order for easier reading of code.</p>
+      <ul>
+        <li><code>class</code></li>
+        <li><code>id</code>, <code>name</code></li>
+        <li><code>data-*</code></li>
+        <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code>, <code>value</code></li>
+        <li><code>title</code>, <code>alt</code></li>
+        <li><code>role</code>, <code>aria-*</code></li>
+      </ul>
+      <p>Classes make for great reusable components, so they come first. Ids are more specific and should be used sparingly (e.g., for in-page bookmarks), so they come second.</p>
     </div>
-    <div class="col ">
+    <div class="g-span highlight">
       <pre>
-        <code class="language-css" >
-.btn {{'{'}}
-   height: 40px;
-   margin: 0 8px 4px 0;
-   padding: 0 26px;
-   font-family: $font-default;
-   background-color: #399fd3;
-   border-radius: 4px;
-   border: none;
-   color: white;
-   overflow: visible; /* the overflow property removes extra width in IE */
+        <code class="language-markup" [innerHTML]="html.order">
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="g-span">
+      <h3>Reducing markup</h3>
+      <p>Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. Take the following example:</p>
+    </div>
+    <div class="g-span highlight">
+      <pre>
+        <code class="language-markup" [innerHTML]="html.reducing">
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="g-span-2">
+      <h3>JavaScript generated markup</h3>
+      <p>Writing markup in a JavaScript file makes the content harder to find, harder to edit, and less performant. Avoid it whenever possible</p>
+    </div>
+  </div>
+  <h2 class="b-b">CSS</h2>
+
+  <div class="content-wrapper">
+    <div class="g-span text">
+      <h3>Syntax</h3>
+      <ul>
+        <li>Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.</li>
+        <li>When grouping selectors, keep individual selectors to a single line.</li>
+        <li>Include one space after <code>:</code> for each declaration.</li>
+        <li>Each declaration should appear on its own line for more accurate error reporting.</li>
+        <li>Comma-separated property values should include a space after each comma (e.g., <code>box-shadow</code>).</li>
+        <li>Don't include spaces after commas <em>within</em> <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, or <code>rect()</code> values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).</li>
+        <li>Don't prefix property values or color parameters with a leading zero (e.g., <code>.5</code> instead of <code>0.5</code> and <code>-.5px</code> instead of <code>-0.5px</code>).</li>
+        <li>Lowercase all hex values, e.g., <code>#fff</code>. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.</li>
+        <li>Use shorthand hex values where available, e.g., <code>#fff</code> instead of <code>#ffffff</code>.</li>
+        <li>Avoid specifying units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>.</li>
+      </ul>
+    </div>
+    <div class="g-span highlight">
+      <pre>
+        <code class="language-css">
+/* Bad CSS */
+.selector, .selector-secondary, .selector[type=text] {{'{'}}
+  padding:15px;
+  margin:0px 0px 15px;
+  background-color:rgba(0, 0, 0, 0.5);
+  box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF
 {{'}'}}
- .btn:hover,
- .btn:focus {{'{'}}
-   background-color: #7ab5d6;
+
+/* Good CSS */
+.selector,
+.selector-secondary,
+.selector[type="text"] {{'{'}}
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
 {{'}'}}
- a.btn {{'{'}}
-   display: inline-block;
-   line-height: 40px;
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="g-span text">
+      <h3>Declaration order</h3>
+      <p>Related property declarations should be grouped together following the order:</p>
+      <ol>
+        <li>Positioning</li>
+        <li>Box model</li>
+        <li>Typographic</li>
+        <li>Visual</li>
+        <li>Misc</li>
+      </ol>
+      <p>Positioning comes first because it can remove an element from the normal flow of the document and override box model related styles. The box model comes next as it dictates a component's dimensions and placement.</p>
+      <p>Everything else takes place <em>inside</em> the component or without impacting the previous two sections, and thus they come last.</p>
+      <p>For a complete list of properties and their order, please see the <a href="https://github.com/twbs/stylelint-config-twbs-bootstrap/blob/master/css/index.js">Bootstrap property order for Stylelint</a>.</p>
+    </div>
+    <div class="g-span highlight">
+      <pre>
+        <code class="language-css">
+.declaration-order {{'{'}}
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  /* Box-model */
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+
+  /* Typography */
+  font: normal 13px "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+
+  /* Visual */
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+
+  /* Misc */
+  opacity: 1;
 {{'}'}}
         </code>
       </pre>
