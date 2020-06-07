@@ -1,5 +1,5 @@
 
-.loader {
+.app-loader {
   width: 200px;
   height: 200px;
   position: absolute;
@@ -8,7 +8,7 @@
   transform: translate(-50%, -50%);
   overflow: hidden;
 }
-.loader .b {
+.app-loader .b {
   border-radius: 50%;
   border-left: 4px solid;
   border-right: 4px solid;
@@ -20,24 +20,24 @@
   transform: translate(-50%, -50%);
   animation: rot 2s infinite;
 }
-.loader .line1 {
+.app-loader .line1 {
   border-color: #ef6c00;
   width: 120px;
   height: 120px;
 }
-.loader .line2 {
+.app-loader .line2 {
   border-color: #558b2f;
   width: 100px;
   height: 100px;
   animation-delay: 0.2s;
 }
-.loader .line3 {
+.app-loader .line3 {
   border-color: #0288d1;
   width: 80px;
   height: 80px;
   animation-delay: 0.4s;
 }
-.loader .line4 {
+.app-loader .line4 {
   border-color: #f44336;
   width: 60px;
   height: 60px;
