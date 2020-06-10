@@ -21,10 +21,12 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.items = [
       {
         label: 'Buttons',
+        routerLinkActiveOptions: 'active',
         routerLink: '/components/buttons',
       },
       {
         label: 'Forms',
+        routerLinkActiveOptions: 'active',
         routerLink: '/components/forms',
       },
     ];

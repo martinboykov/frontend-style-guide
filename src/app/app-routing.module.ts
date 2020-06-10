@@ -8,7 +8,6 @@ import { ComponentComponent } from './components/component.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { showSidebar: false } },
-  { path: 'home', redirectTo: '', pathMatch: 'full' },
   {
     path: 'code-guide',
     component: CodeGuideComponent,

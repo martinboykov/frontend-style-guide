@@ -13,7 +13,8 @@
           type="text"
           (click)="display = !display"
           pButton
-          icon="pi pi-bars"></button>
+          icon="pi pi-bars"
+          aria-label="toggle sidenav"></button>
   <main class="main"
         [ngClass]="{'hideSidebar': !display}">
     <router-outlet></router-outlet>

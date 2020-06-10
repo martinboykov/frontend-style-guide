@@ -18,21 +18,21 @@ export class HeaderComponent implements OnInit {
     this.switchVal = false;
     this.items = [
       {
-        label: 'Home',
-        routerLink: '/home',
-        routerLinkActiveOptions: 'active',
+        icon: 'pi pi-home',
+        routerLink: '/',
+        routerLinkActiveOptions: { exact: true },
         expanded: true,
       },
       {
         label: 'Code Guide',
         routerLink: '/code-guide',
-        routerLinkActiveOptions: 'active',
+        routerLinkActiveOptions: { exact: true },
         expanded: true,
       },
       {
         label: 'Components',
         routerLink: '/components',
-        routerLinkActiveOptions: 'active',
+        // routerLinkActiveOptions: { exact: false },
         expanded: true,
       },
     ];
