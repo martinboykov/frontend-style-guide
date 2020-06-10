@@ -9,9 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsComponent } from './components/forms/forms.component';
 import { FieldsetModule } from 'primeng/fieldset';
 import { CodeForAmericaComponent } from './components/buttons/code-for-america/code-for-america.component';
-import { HomeComponent } from './components/home/home.component';
-import { CodeGuideComponent } from './components/code-guide/code-guide.component';
-
+import { HomeComponent } from './home/home.component';
+import { CodeGuideComponent } from './code-guide/code-guide.component';
+import { BootstrapComponent } from './components/buttons/bootstrap/bootstrap.component';
+import { ComponentComponent } from './components/component.component';
+import {SidebarModule} from 'primeng/sidebar';
+import { MenuModule } from 'primeng/menu';
+import { MenubarModule } from 'primeng/menubar';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import {ButtonModule} from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +26,9 @@ import { CodeGuideComponent } from './components/code-guide/code-guide.component
     CodeForAmericaComponent,
     HomeComponent,
     CodeGuideComponent,
+    BootstrapComponent,
+    ComponentComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -28,6 +37,12 @@ import { CodeGuideComponent } from './components/code-guide/code-guide.component
     AppRoutingModule,
     SharedModule,
     FieldsetModule,
+    SidebarModule,
+    MenuModule,
+    MenubarModule,
+    PanelMenuModule,
+    ButtonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,9 +1,28 @@
-<div class="wp-wrapper">
-  <app-header class="header"></app-header>
-  <main class="main">
+<div id="app-wrapper">
+  <app-header class="header"
+              [ngClass]="{'showSidebar':(showSidebar | async)}"></app-header>
+  <p-sidebar class="sidenav"
+             [(visible)]="display"
+             [modal]="false"
+             [ngStyle]="{'margin-left': !(showSidebar | async) ? '-28rem' : '0rem'}">
+    <p-panelMenu [model]="items"
+                 [multiple]="false"
+                 [style]="{'width':'100%'}"></p-panelMenu>
+  </p-sidebar>
+
+  <button [ngClass]="{'showSidebar': (showSidebar | async)}"
+          class="sidenav-toggle"
+          type="text"
+          (click)="display = !display"
+          pButton
+          icon="pi pi-bars"></button>
+
+  <main class="main"
+        [ngClass]="{'showSidebar':(showSidebar | async)}"
+        [ngStyle]="{'margin-left':display ? '28rem' : '0rem'}">
     <router-outlet></router-outlet>
   </main>
-  <div class="footer">
+  <footer>
     Footer
-  </div>
+  </footer>
 </div>

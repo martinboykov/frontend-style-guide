@@ -39,7 +39,6 @@ export class CodeForAmericaComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.prismService.highlightAll();
-    console.log(this.fieldset);
   }
   switchBtnState() {
     this.btnState = !this.fieldset.collapsed ? 'Hide Snippets' : 'Show Snippets';

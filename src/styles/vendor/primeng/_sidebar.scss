@@ -1,0 +1,47 @@
+body #app-wrapper > p-sidebar.sidenav .ui-sidebar {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  padding: 1rem 0rem;
+
+  box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
+
+  .ui-sidebar-close {
+    display: none;
+  }
+
+  .ui-panelmenu-header-link,
+  .ui-menuitem-link {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    .ui-panelmenu-icon {
+      order: 2;
+      margin-left: auto;
+      &::before {
+        content: "\e901";
+      }
+    }
+  }
+  .ui-panelmenu-header-link {
+    padding: 1rem 2rem;
+  }
+  .ui-submenu-list {
+    margin: 0;
+    .ui-menuitem-link  {
+      padding-left: 3rem !important;
+    }
+  }
+  .ui-submenu-list .ui-submenu-list {
+    .ui-menuitem-link  {
+      padding-left: 4rem !important;
+    }
+  }
+  .ui-submenu-list .ui-submenu-list .ui-submenu-list  {
+    .ui-menuitem-link  {
+      padding-left: 5rem !important;
+    }
+  }
+}

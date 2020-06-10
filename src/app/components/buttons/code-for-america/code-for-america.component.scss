@@ -1,6 +1,5 @@
 @import "./core/variables";
 @import "./core/root";
-
 .btn {
   /* Positioning */
 
@@ -28,5 +27,8 @@
 a.btn {
   display: inline-block;
   line-height: 40px;
+  &:hover,
+  &:focus {
+    color: white;
+  }
 }
-

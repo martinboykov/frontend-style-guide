@@ -75,14 +75,14 @@ li {
 
 .section-start {
   height: 0.01rem;
-  margin: -5rem 0 5rem;
+  margin: -$header-height 0 $header-height;
   visibility: hidden;
 }
 .container {
   width: 100%;
   max-width: $xl;
   margin: 0 auto;
-  padding: 0rem 1rem;
+  padding: 0rem 1rem 2rem;
   @include mq($md) {
     max-width: 100%;
   }
@@ -91,7 +91,7 @@ li {
   width: 100%;
   max-width: $xl;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 0rem 1rem 2rem;
   @include mq($md) {
     max-width: 100%;
   }
@@ -101,13 +101,13 @@ li {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 0rem 1rem 2rem;
 }
 
 .content-wrapper {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   padding: 1rem 0rem;
   @include mq($md) {
     grid-template-columns: 1fr;
@@ -115,7 +115,7 @@ li {
 }
 
 .inner-page-heading {
-  padding-top: 5rem;
+  padding-top: $header-height;
 }
 
 .g-span,

@@ -1,0 +1,69 @@
+.ui-panelmenu {
+  width: auto;
+}
+
+.ui-panelmenu .ui-menu-separator {
+  border-width: 0px 0 0 0;
+}
+
+.ui-panelmenu .ui-panelmenu-content-wrapper {
+  overflow: hidden;
+}
+
+.ui-panelmenu .ui-panelmenu-header {
+  margin: 0px 0 0 0;
+}
+
+.ui-panelmenu .ui-panelmenu-header-link {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.ui-panelmenu .ui-panelmenu-icon {
+  margin-right: 0rem;
+  margin-left: 1rem;
+  vertical-align: middle;
+  order: 2;
+}
+
+.ui-panelmenu .ui-menuitem-text {
+  vertical-align: middle;
+}
+
+.ui-panelmenu .ui-menuitem-icon {
+  margin-right: 0rem;
+  vertical-align: middle;
+}
+
+.ui-panelmenu .ui-panelmenu-content {
+  padding: 0.25em;
+  border-top: 0rem;
+  margin-bottom: 1px;
+}
+
+.ui-panelmenu .ui-submenu-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: 1.5em;
+}
+
+.ui-panelmenu
+  .ui-panelmenu-content
+  > .ui-panelmenu-root-submenu
+  > .ui-submenu-list {
+  margin-left: 0;
+}
+
+.ui-panelmenu .ui-menuitem {
+  overflow: hidden;
+  margin: 0.125em 0;
+}
+
+.ui-panelmenu .ui-menuitem-link {
+  padding: 0.25em;
+  display: flex;
+  text-decoration: none;
+}

@@ -2,15 +2,24 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ButtonsComponent } from './components/buttons/buttons.component';
 import { FormsComponent } from './components/forms/forms.component';
-import { HomeComponent } from './components/home/home.component';
-import { CodeGuideComponent } from './components/code-guide/code-guide.component';
+import { HomeComponent } from './home/home.component';
+import { CodeGuideComponent } from './code-guide/code-guide.component';
+import { ComponentComponent } from './components/component.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'code-guide', component: CodeGuideComponent },
-  { path: 'buttons', component: ButtonsComponent },
-  { path: 'forms', component: FormsComponent },
+  { path: 'home', component: HomeComponent, data: { showSidebar: false } },
+  { path: 'code-guide', component: CodeGuideComponent, data: { showSidebar: false } },
+  {
+    path: 'components',
+    component: ComponentComponent,
+    children: [
+      { path: 'buttons', component: ButtonsComponent, data: { showSidebar: true } },
+      { path: 'forms', component: FormsComponent, data: { showSidebar: true } },
+      { path: '', redirectTo: 'buttons', pathMatch: 'full' },
+
+    ],
+  },
 ];
 
 @NgModule({

@@ -1,2 +1,25 @@
 @import "./core/variables";
-@import "./core/root";
+@import "./core/mixins";
+:host ::ng-deep {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-flow: row nowrap;
+    height: $header-height;
+    padding: 0 1rem;
+    align-items: center;
+    background: white;
+    box-shadow: 0 1px 8px 0 #c8c8c8;
+    .menubar {
+      margin-left: 5rem;
+    }
+    .switch {
+      margin-left: auto;
+      line-height: 1;
+    }
+  }
+}
