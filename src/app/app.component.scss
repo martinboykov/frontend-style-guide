@@ -1,71 +1,118 @@
 @import "./core/variables";
 @import "./core/mixins";
-#app-wrapper {
-  display: grid;
-  grid-template-columns: min-content auto;
-  grid-template-rows: 5rem 1fr 5rem;
-  min-height: 100vh;
-  button.sidenav-toggle {
-    position: fixed;
-    top: 1rem;
-    left: 2rem;
-    margin-left: -28rem;
-
-    color: white;
-    z-index: 1002;
-    &.showSidebar {
-      margin-left: 0;
-    }
-  }
-}
 :host ::ng-deep {
-  app-header {
-    grid-column: 1/-1;
-    z-index: 1001;
+  #app-wrapper {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: 5rem 1fr 5rem;
+    min-height: 100vh;
+    button.sidenav-toggle {
+      position: fixed;
+      top: 1rem;
+      left: 2rem;
+      margin-left: -28rem;
 
-    background-color: white;
-    .menubar {
-      margin-left: 0rem !important;
+      color: white;
+      z-index: 1002;
+      &.showSidebar {
+        margin-left: 0;
+      }
+    }
+    app-header {
+      grid-column: 1/-1;
+      z-index: 1001;
+
+      background-color: white;
+      .menubar {
+        margin-left: 0rem !important;
+        transition: margin-left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      &.showSidebar {
+        .menubar {
+          margin-left: 5rem !important;
+        }
+      }
+    }
+    p-sidebar {
+      position: fixed;
+      top: 4.9rem;
+      left: 0;
+      height: 100%;
+      width: 28rem;
+      grid-column: 1/2;
+      grid-row: 2/3;
+      margin-left: -28rem;
       transition: margin-left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+      &.showSidebar {
+        margin-left: 0rem;
+        @include mq($md) {
+          margin-left: 0rem;
+        }
+        &.hideSidebar {
+          margin-left: 0;
+          @include mq($md) {
+            margin-left: -28rem;
+          }
+        }
+      }
+
+      z-index: 1000;
+    }
+
+    main {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      transition: margin-left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+      &.showSidebar {
+        margin-left: 28rem;
+        @include mq($md) {
+          margin-left: 0 !important;
+        }
+      }
+    }
+    footer {
+      grid-column: 1/-1;
+      grid-row: 3/4;
+      height: 5rem;
+
+      line-height: 5rem;
+      text-align: center;
+      background: white;
+      box-shadow: 0 1px 8px 0 #c8c8c8;
     }
     &.showSidebar {
-      .menubar {
-        margin-left: 5rem !important;
+      button.sidenav-toggle {
+        margin-left: 0;
+      }
+      app-header {
+        .menubar {
+          margin-left: 5rem !important;
+        }
+      }
+      p-sidebar {
+        margin-left: 0rem;
+        @include mq($md) {
+          margin-left: 0rem;
+        }
+        &.hideSidebar {
+          margin-left: -28rem;
+          @include mq($md) {
+            margin-left: -28rem;
+          }
+        }
+      }
+      main {
+        margin-left: 28rem;
+        @include mq($md) {
+          margin-left: 0 !important;
+        }
+        &.hideSidebar {
+          margin-left: 0rem;
+          @include mq($md) {
+            margin-left: 0rem;
+          }
+        }
       }
     }
   }
-}
-p-sidebar {
-  position: fixed;
-  top: 4.9rem;
-  left: 0;
-  height: 100%;
-  width: 28rem;
-  grid-column: 1/2;
-  grid-row: 2/3;
-
-  z-index: 1000;
-}
-
-main {
-  grid-column: 2/3;
-  grid-row: 2/3;
-  margin-left: 0;
-  transition: margin-left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
-  &.showSidebar {
-    margin-left: 28rem;
-    @include mq($md) {
-      margin-left: 0 !important;
-    }
-  }
-}
-footer {
-  grid-column: 1/-1;
-  grid-row: 3/4;
-  height: 5rem;
-
-  line-height: 5rem;
-  text-align: center;
-  background: white;
-    box-shadow: 0 1px 8px 0 #c8c8c8;
 }

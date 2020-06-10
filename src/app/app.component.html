@@ -1,25 +1,21 @@
-<div id="app-wrapper">
-  <app-header class="header"
-              [ngClass]="{'showSidebar':(showSidebar | async)}"></app-header>
+<div id="app-wrapper"
+     [ngClass]="{'showSidebar':(showSidebar | async)}">
+  <app-header class="header"></app-header>
   <p-sidebar class="sidenav"
              [(visible)]="display"
              [modal]="false"
-             [ngStyle]="{'margin-left': !(showSidebar | async) ? '-28rem' : '0rem'}">
+             [ngClass]="{'hideSidebar': !display}">
     <p-panelMenu [model]="items"
-                 [multiple]="false"
-                 [style]="{'width':'100%'}"></p-panelMenu>
+                 [multiple]="false"></p-panelMenu>
   </p-sidebar>
 
-  <button [ngClass]="{'showSidebar': (showSidebar | async)}"
-          class="sidenav-toggle"
+  <button class="sidenav-toggle"
           type="text"
           (click)="display = !display"
           pButton
           icon="pi pi-bars"></button>
-
   <main class="main"
-        [ngClass]="{'showSidebar':(showSidebar | async)}"
-        [ngStyle]="{'margin-left':display ? '28rem' : '0rem'}">
+        [ngClass]="{'hideSidebar': !display}">
     <router-outlet></router-outlet>
   </main>
   <footer>
