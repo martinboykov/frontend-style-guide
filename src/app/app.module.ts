@@ -13,11 +13,11 @@ import { HomeComponent } from './home/home.component';
 import { CodeGuideComponent } from './code-guide/code-guide.component';
 import { BootstrapComponent } from './components/buttons/bootstrap/bootstrap.component';
 import { ComponentComponent } from './components/component.component';
-import {SidebarModule} from 'primeng/sidebar';
+import { SidebarModule } from 'primeng/sidebar';
 import { MenuModule } from 'primeng/menu';
 import { MenubarModule } from 'primeng/menubar';
 import { PanelMenuModule } from 'primeng/panelmenu';
-import {ButtonModule} from 'primeng/button';
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,6 @@ import {ButtonModule} from 'primeng/button';
     CodeGuideComponent,
     BootstrapComponent,
     ComponentComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -41,8 +40,7 @@ import {ButtonModule} from 'primeng/button';
     MenuModule,
     MenubarModule,
     PanelMenuModule,
-    ButtonModule
-
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
