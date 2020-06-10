@@ -46,7 +46,6 @@ export class AppComponent implements OnInit, AfterViewInit {
             : (this.display = false)
           : (this.display = false)
       ),
-      tap((data) => console.log(data, this.display)),
       map((data: any) =>
         data.hasOwnProperty('showSidebar')
           ? data.showSidebar

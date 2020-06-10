@@ -7,17 +7,24 @@ import { CodeGuideComponent } from './code-guide/code-guide.component';
 import { ComponentComponent } from './components/component.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, data: { showSidebar: false } },
-  { path: 'code-guide', component: CodeGuideComponent, data: { showSidebar: false } },
+  { path: '', component: HomeComponent, data: { showSidebar: false } },
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
+  {
+    path: 'code-guide',
+    component: CodeGuideComponent,
+    data: { showSidebar: false },
+  },
   {
     path: 'components',
     component: ComponentComponent,
     children: [
-      { path: 'buttons', component: ButtonsComponent, data: { showSidebar: true } },
+      {
+        path: 'buttons',
+        component: ButtonsComponent,
+        data: { showSidebar: true },
+      },
       { path: 'forms', component: FormsComponent, data: { showSidebar: true } },
       { path: '', redirectTo: 'buttons', pathMatch: 'full' },
-
     ],
   },
 ];
