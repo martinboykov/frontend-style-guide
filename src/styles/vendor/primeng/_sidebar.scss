@@ -8,10 +8,6 @@
 
   box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
 
-  .ui-sidebar-close {
-    display: none;
-  }
-
   .ui-panelmenu-header-link,
   .ui-menuitem-link {
     display: flex;
@@ -53,6 +49,57 @@
     padding: 0.5rem 1rem !important;
     .ui-menuitem-icon {
       margin-right: 0 !important;
+    }
+  }
+}
+
+#app-wrapper {
+  .sidebar {
+    .ui-sidebar {
+      position: fixed;
+      top: 4.9rem;
+      left: 0;
+      z-index: 1001;
+
+      height: calc(100% - #{$header-height} + 0.1rem);
+      width: 28rem;
+      margin-left: -28rem;
+
+      overflow: auto;
+      // transition: margin-left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-duration: 400ms;
+      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-property: transform, margin-left;
+      opacity: 1 !important;
+      &.sidebar-visible {
+        margin-left: 0rem;
+        &.sidebar-hide {
+          margin-left: 0;
+        }
+        @include mq($md) {
+          margin-left: 0rem;
+          &.sidebar-hide {
+            margin-left: -28rem;
+          }
+          &.sidebar-hide-mob {
+            margin-left: -28rem;
+          }
+        }
+      }
+    }
+  }
+  &.sidebar-visible {
+    .sidebar {
+      .ui-sidebar {
+        margin-left: 0rem;
+        box-shadow: 0 1px 8px 0 var(--layer-3);
+        &.sidebar-hide {
+          margin-left: -28rem;
+        }
+        @include mq($md) {
+          margin-left: 0rem;
+        }
+      }
     }
   }
 }

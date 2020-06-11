@@ -1,0 +1,11 @@
+// modifications
+#app-wrapper {
+  .backdrop {
+    .ui-blockui-document {
+      display: none;
+      @include mq($md) {
+        display: absolute;
+      }
+    }
+  }
+}

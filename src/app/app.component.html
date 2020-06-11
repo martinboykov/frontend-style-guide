@@ -1,12 +1,22 @@
 <div id="app-wrapper"
-     [ngClass]="{'showSidebar':(showSidebar | async)}">
+     [ngClass]="{'sidebar-visible':(showSidebar | async)}"
+     #appWrapper>
   <app-header class="header"></app-header>
+  <div class="backdrop"
+       [ngClass]="{'hide': !display}"
+       (click)="unblock()"></div>
   <p-sidebar class="sidebar"
              [(visible)]="display"
+             [ngClass]="{'sidebar-hide': !display}"
              [modal]="false"
-             [ngClass]="{'hideSidebar': !display}">
+             [autoZIndex]=false
+             [showCloseIcon]=false
+             [closeOnEscape]=true
+             [ngStyle]="{'opacity': 1}"
+             #sidebar>
     <p-panelMenu [model]="items"
-                 [multiple]="false"></p-panelMenu>
+                 [multiple]="false">
+    </p-panelMenu>
   </p-sidebar>
 
   <button class="sidebar-toggle"
@@ -16,7 +26,7 @@
           icon="pi pi-bars"
           aria-label="toggle sidebar"></button>
   <main class="main"
-        [ngClass]="{'hideSidebar': !display}">
+        [ngClass]="{'sidebar-hide': !display}">
     <router-outlet></router-outlet>
   </main>
   <footer>

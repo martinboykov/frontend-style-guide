@@ -22,7 +22,7 @@ header {
     line-height: 1;
   }
 }
-:host-context(.showSidebar) {
+:host-context(.sidebar-visible) {
   header .menubar {
     margin-left: 5rem;
   }
