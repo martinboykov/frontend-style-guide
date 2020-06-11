@@ -17,7 +17,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
   ngOnInit() {
-    console.log('AppCompInit');
     this.items = [
       {
         label: 'Buttons',
@@ -30,7 +29,6 @@ export class AppComponent implements OnInit, AfterViewInit {
         routerLink: '/components/forms',
       },
     ];
-
     this.showSidebar = this.router.events.pipe(
       filter((e) => e instanceof NavigationEnd),
       map(() => this.activatedRoute),
@@ -56,6 +54,5 @@ export class AppComponent implements OnInit, AfterViewInit {
     );
   }
   ngAfterViewInit() {
-    console.log('AppCompInit');
   }
 }

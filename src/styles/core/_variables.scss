@@ -42,29 +42,22 @@ $white: #fff;
 $black: #000;
 $grey: #848484;
 $layer-0: $white;
-$layer-1: #dbdbdb;
-$layer-2: #eaeaea;
+$layer-1: #eaeaea;
+$layer-2: #dbdbdb;
+$layer-3: #c8c8c8;
+
 $text-color-black: #333333;
 $text-color-white: $white;
 $text-color-grey: #848484;
 $blue: #007ad9;
+$blue-100: lighten($blue, 40%);
+$blue-200: lighten($blue, 30%);
+$blue-300: lighten($blue, 20%);
 $blue-400: lighten($blue, 10%);
 $blue-600: darken($blue, 10%);
 $red: adjust-hue($blue, 140deg);
 $red-400: lighten($red, 10%);
 $red-600: darken($red, 10%);
-
-:root {
-  --theme-color-400: #{$blue-400};
-  --theme-color: #{$blue};
-  --theme-color-600: #{$blue-600};
-  --theme-text-primary: #{$text-color-black};
-  --theme-text-secondary: #{$text-color-white};
-}
-
-$theme-color-400: var(--theme-color-400);
-$theme-color: var(--theme-color);
-$theme-color-600: var(--theme-color-600);
 
 $body-bg: $layer-0 !default;
 $body-color: $text-color-black !default;

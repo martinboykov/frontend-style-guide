@@ -36,6 +36,7 @@ export class HeaderComponent implements OnInit {
         expanded: true,
       },
     ];
+
   }
   changeColors() {
     this.themeService.switchTheme(this.switchVal);

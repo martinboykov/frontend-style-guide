@@ -1,4 +1,5 @@
-body #app-wrapper > p-sidebar.sidenav .ui-sidebar {
+// modifications
+#app-wrapper .sidebar .ui-sidebar {
   position: relative;
   height: 100%;
   width: 100%;
@@ -30,18 +31,28 @@ body #app-wrapper > p-sidebar.sidenav .ui-sidebar {
   }
   .ui-submenu-list {
     margin: 0;
-    .ui-menuitem-link  {
-      padding-left: 3rem !important;
+    .ui-menuitem-link {
+      padding-left: 3rem;
     }
   }
   .ui-submenu-list .ui-submenu-list {
-    .ui-menuitem-link  {
-      padding-left: 4rem !important;
+    .ui-menuitem-link {
+      padding-left: 4rem;
     }
   }
-  .ui-submenu-list .ui-submenu-list .ui-submenu-list  {
-    .ui-menuitem-link  {
-      padding-left: 5rem !important;
+  .ui-submenu-list .ui-submenu-list .ui-submenu-list {
+    .ui-menuitem-link {
+      padding-left: 5rem;
+    }
+  }
+}
+
+// styling header button for sidebar position toggle
+#app-wrapper .menubar {
+  .ui-menuitem-link {
+    padding: 0.5rem 1rem !important;
+    .ui-menuitem-icon {
+      margin-right: 0 !important;
     }
   }
 }

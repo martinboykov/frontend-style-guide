@@ -1,33 +1,29 @@
 @import "./core/variables";
 @import "./core/mixins";
-:host ::ng-deep {
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
-    display: flex;
-    flex-flow: row nowrap;
-    height: $header-height;
-    padding: 0 1rem;
-    align-items: center;
-    background: white;
-    box-shadow: 0 1px 8px 0 #c8c8c8;
-    .menubar {
-      margin-left: 5rem;
-      .ui-menuitem-link {
-        height: $header-height;
-        line-height: $header-height;
-        padding: 0 1rem !important;
-        .ui-menuitem-icon {
-          margin-right: 0!important;
-        }
-      }
-    }
-    .switch {
-      margin-left: auto;
-      line-height: 1;
-    }
+  display: flex;
+  flex-flow: row nowrap;
+  height: $header-height;
+  padding: 0 1rem;
+  align-items: center;
+  background: white;
+  box-shadow: 0 1px 8px 0 var(--layer-3);
+  .menubar {
+    margin-left: 0rem;
+    transition: margin-left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .switch {
+    margin-left: auto;
+    line-height: 1;
+  }
+}
+:host-context(.showSidebar) {
+  header .menubar {
+    margin-left: 5rem;
   }
 }

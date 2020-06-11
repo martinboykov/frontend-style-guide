@@ -1,9 +1,10 @@
 :root {
   --layer-0: #{$layer-0};
   --layer-1: #{$layer-1};
-  --text-color-black: #{$text-color-black};
-  --text-color-white: #{$text-color-white};
-  --text-color-grey: #{$text-color-grey};
+  --layer-2: #{$layer-2};
+  --layer-3: #{$layer-3};
+
+
   --blue: #{$blue};
   --blue-400: #{$blue-400};
   --blue-600: #{$blue-600};
@@ -11,4 +12,14 @@
   --red: #{$red};
   --red-400: #{$red-400};
   --red-600: #{$red-600};
+
+  --theme-color-100: #{$blue-100};
+  --theme-color-200: #{$blue-200};
+  --theme-color-300: #{$blue-300};
+  --theme-color-400: #{$blue-400};
+  --theme-color-400: #{$blue-400};
+  --theme-color: #{$blue};
+  --theme-color-600: #{$blue-600};
+  --theme-text-primary: #{$text-color-black};
+  --theme-text-secondary: #{$text-color-white};
 }

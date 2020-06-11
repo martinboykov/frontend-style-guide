@@ -1,7 +1,7 @@
 <div id="app-wrapper"
      [ngClass]="{'showSidebar':(showSidebar | async)}">
   <app-header class="header"></app-header>
-  <p-sidebar class="sidenav"
+  <p-sidebar class="sidebar"
              [(visible)]="display"
              [modal]="false"
              [ngClass]="{'hideSidebar': !display}">
@@ -9,12 +9,12 @@
                  [multiple]="false"></p-panelMenu>
   </p-sidebar>
 
-  <button class="sidenav-toggle"
+  <button class="sidebar-toggle"
           type="text"
           (click)="display = !display"
           pButton
           icon="pi pi-bars"
-          aria-label="toggle sidenav"></button>
+          aria-label="toggle sidebar"></button>
   <main class="main"
         [ngClass]="{'hideSidebar': !display}">
     <router-outlet></router-outlet>
