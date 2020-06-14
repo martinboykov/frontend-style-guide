@@ -1,6 +1,6 @@
 <div id="app-wrapper"
-     [ngClass]="{'sidebar-visible':(showSidebar | async)}"
-     #appWrapper>
+     [ngClass]="{'sidebar-visible':(showSidebar | async),
+    'is-mobile': mobile, 'is-desktop': !mobile}">
   <app-header class="header"></app-header>
   <div class="backdrop"
        [ngClass]="{'hide': !display}"
@@ -12,8 +12,7 @@
              [autoZIndex]=false
              [showCloseIcon]=false
              [closeOnEscape]=true
-             [ngStyle]="{'opacity': 1}"
-             #sidebar>
+             [ngStyle]="{'opacity': 1}">
     <p-panelMenu [model]="items"
                  [multiple]="false">
     </p-panelMenu>

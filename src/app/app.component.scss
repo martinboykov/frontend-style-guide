@@ -12,8 +12,16 @@
     background-color: var(--layer-0);
   }
   .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+
     visibility: hidden;
     background-color: rgba(0, 0, 0, 0.6);
+
     transition-duration: 400ms;
     transition-timing-function: ease;
     transition-property: background-color, visibility;
@@ -22,7 +30,7 @@
     position: fixed;
     top: 0.65rem;
     left: 1.65rem;
-    margin-left: -28rem;
+    // margin-left: -28rem;
     color: var(--theme-text-secondary);
     z-index: 1003;
   }
@@ -42,25 +50,24 @@
   }
 
   // if we are on page width sidebar
-  &.sidebar-visible {
+  &.is-mobile {
     .backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 999;
       visibility: visible;
-
+      display: block;
       &.hide {
         visibility: hidden;
         background-color: transparent;
         transition-duration: 0ms;
       }
-      @include mq($md) {
-        display: block;
-      }
     }
+    button.sidebar-toggle {
+      margin-left: 0;
+    }
+    main {
+      margin-left: 0rem;
+    }
+  }
+  &.sidebar-visible.is-desktop {
     button.sidebar-toggle {
       margin-left: 0;
     }
@@ -68,12 +75,6 @@
       margin-left: 28rem;
       &.sidebar-hide {
         margin-left: 0rem;
-      }
-      @include mq($md) {
-        margin-left: 0;
-        &.sidebar-hide {
-          margin-left: 0rem;
-        }
       }
     }
   }
