@@ -11,7 +11,7 @@
 
 ### Build-Process:
 
-1. Install dependencies for frontend with `npm install`
+1. Install dependencies `npm install`
 2. For developer environment run `ng serve`
 3. For production environment run `ng build`
 4. For deployment in github pages run `ng deploy`

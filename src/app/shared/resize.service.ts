@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { NgZone } from '@angular/core';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 
 declare var ResizeObserver: any;
 
