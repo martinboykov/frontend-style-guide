@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { ThemeService } from '../theme.service';
 import { ResizeService } from '../resize.service';
+import { MainNavService } from '../main-nav.service';
 
 @Component({
   selector: 'app-header',
@@ -15,35 +16,14 @@ export class HeaderComponent implements OnInit {
   switchVal: boolean;
   constructor(
     private themeService: ThemeService,
-    private resizer: ResizeService
+    private resizer: ResizeService,
+    private navService: MainNavService
   ) {}
 
   ngOnInit() {
     this.switchVal = false;
     this.resizer.isMobileSub$.subscribe((isMobile) => {
-      if (isMobile) {
-        this.items = [];
-      } else {
-        this.items = [
-          {
-            icon: 'pi pi-home',
-            routerLink: '/',
-            routerLinkActiveOptions: { exact: true },
-            expanded: true,
-          },
-          {
-            label: 'Code Guide',
-            routerLink: '/code-guide',
-            routerLinkActiveOptions: { exact: true },
-            expanded: true,
-          },
-          {
-            label: 'Components',
-            routerLink: '/components',
-            expanded: true,
-          },
-        ];
-      }
+      this.items = this.navService.getMainNav(isMobile);
     });
   }
   changeColors() {

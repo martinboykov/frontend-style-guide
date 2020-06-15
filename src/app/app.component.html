@@ -1,5 +1,5 @@
 <div id="app-wrapper"
-     [ngClass]="{'sidebar-visible':(showSidebar | async),
+     [ngClass]="{'sidebar-visible':(showSidebar),
     'is-mobile': mobile, 'is-desktop': !mobile}">
   <app-header class="header"></app-header>
   <div class="backdrop"
@@ -7,7 +7,7 @@
        (click)="unblock()"></div>
   <p-sidebar class="sidebar"
              [(visible)]="display"
-             [ngClass]="{'sidebar-hide': !display}"
+             [ngClass]="{'sidebar-hide': !display, 'sidebar-show': display}"
              [modal]="false"
              [autoZIndex]=false
              [showCloseIcon]=false
