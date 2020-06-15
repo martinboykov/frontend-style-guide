@@ -27,7 +27,6 @@ export class ResizeService {
     this.observer = new ResizeObserver((entries) => {
       this.zone.run(() => {
         const appWidth = entries[0].contentRect.width;
-        console.log(appWidth);
         if (appWidth <= this.breakPoint) {
           this.isMobileSub$.next(true);
         } else {

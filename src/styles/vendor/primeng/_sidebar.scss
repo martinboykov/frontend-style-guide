@@ -73,8 +73,7 @@
       opacity: 1 !important;
     }
   }
-  &.is-mobile,
-  &.sidebar-visible {
+  &.is-mobile {
     .sidebar {
       .ui-sidebar {
         margin-left: 0rem;
@@ -82,8 +81,16 @@
         &.sidebar-hide {
           margin-left: -28rem;
         }
-        @include mq($md) {
-          margin-left: 0rem;
+      }
+    }
+  }
+  &.sidebar-visible.is-desktop {
+    .sidebar {
+      .ui-sidebar {
+        margin-left: 0rem;
+        box-shadow: 0 1px 8px 0 var(--layer-3);
+        &.sidebar-hide {
+          margin-left: -28rem;
         }
       }
     }

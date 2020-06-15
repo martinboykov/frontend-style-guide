@@ -35,23 +35,35 @@ export class AppComponent implements OnInit, AfterViewInit {
           {
             label: 'Home',
             routerLink: '/',
+            routerLinkActiveOptions: { exact: true },
           },
           {
             label: 'Code Guide',
             routerLink: '/code-guide',
+            routerLinkActiveOptions: { exact: true },
           },
           {
             label: 'Components',
+            routerLinkActiveOptions: { exact: false },
+            expanded: this.checkActiveState('/components'),
             items: [
               {
                 label: 'Buttons',
                 title: 'components/buttons',
-                command: (e) => this.sidebarHandler(e),
+            routerLink: 'components/buttons',
+
+                // command: (e) => this.sidebarHandler(e),
+                routerLinkActiveOptions: { exact: true },
+                // expanded: this.checkActiveState('/components/buttons'),
               },
               {
                 label: 'Forms',
                 title: 'components/forms',
-                command: (e) => this.sidebarHandler(e),
+            routerLink: 'components/forms',
+
+                // command: (e) => this.sidebarHandler(e),
+                routerLinkActiveOptions: { exact: true },
+                // expanded: this.checkActiveState('/components/forms'),
               },
             ],
           },
@@ -61,12 +73,18 @@ export class AppComponent implements OnInit, AfterViewInit {
           {
             label: 'Buttons',
             title: 'components/buttons',
-            command: (e) => this.sidebarHandler(e),
+            routerLink: 'components/buttons',
+            // command: (e) => this.sidebarHandler(e),
+            routerLinkActiveOptions: { exact: true },
+            expanded: this.checkActiveState('/components/buttons'),
           },
           {
             label: 'Forms',
             title: 'components/forms',
-            command: (e) => this.sidebarHandler(e),
+            routerLink: 'components/forms',
+            // command: (e) => this.sidebarHandler(e),
+            routerLinkActiveOptions: { exact: true },
+            expanded: this.checkActiveState('/components/forms'),
           },
         ];
       }
@@ -107,6 +125,13 @@ export class AppComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.display = false;
     }, 0);
+  }
+  checkActiveState(givenLink) {
+    if (this.router.url.indexOf(givenLink) === -1) {
+      return false;
+    } else {
+      return true;
+    }
   }
   ngAfterViewInit() {}
 }

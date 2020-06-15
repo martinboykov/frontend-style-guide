@@ -22,4 +22,13 @@ header {
     line-height: 1;
   }
 }
-
+:host-context(.is-desktop){
+  header .menubar {
+    margin-left: 0rem;
+  }
+}
+:host-context(.sidebar-visible.is-desktop){
+  header .menubar {
+    margin-left: 5rem;
+  }
+}
