@@ -29,14 +29,14 @@ export class MainNavService {
               title: 'components/buttons',
               routerLink: 'components/buttons',
               routerLinkActiveOptions: { exact: true },
-              // expanded: this.checkActiveState('/components/buttons'),
+              expanded: this.checkActiveState('/components/buttons'),
             },
             {
               label: 'Forms',
               title: 'components/forms',
               routerLink: 'components/forms',
               routerLinkActiveOptions: { exact: true },
-              // expanded: this.checkActiveState('/components/forms'),
+              expanded: this.checkActiveState('/components/forms'),
             },
           ],
         },
@@ -48,14 +48,14 @@ export class MainNavService {
           title: 'components/buttons',
           routerLink: 'components/buttons',
           routerLinkActiveOptions: { exact: true },
-          expanded: this.checkActiveState('/components/buttons'),
+          expanded: this.checkActiveState('/components/buttons/'),
         },
         {
           label: 'Forms',
           title: 'components/forms',
           routerLink: 'components/forms',
           routerLinkActiveOptions: { exact: true },
-          expanded: this.checkActiveState('/components/forms'),
+          expanded: this.checkActiveState('/components/forms/'),
         },
       ];
     }
@@ -67,18 +67,21 @@ export class MainNavService {
       return [
         {
           icon: 'pi pi-home',
+          title: 'Home',
           routerLink: '/',
           routerLinkActiveOptions: { exact: true },
           expanded: true,
         },
         {
           label: 'Code Guide',
+          title: 'Code Guide',
           routerLink: '/code-guide',
           routerLinkActiveOptions: { exact: true },
           expanded: true,
         },
         {
           label: 'Components',
+          title: 'Components',
           routerLink: '/components',
           expanded: true,
         },

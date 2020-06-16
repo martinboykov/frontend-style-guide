@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Add your customizations of theme here */
 #app-wrapper .ui-widget {
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: $font-default;
   font-size: $font-size-base;
   text-decoration: none;
 }
@@ -1484,10 +1484,12 @@
 }
 #app-wrapper .ui-menubar .ui-menuitem-link .ui-menuitem-text {
   color: var(--theme-text-primary);
+  vertical-align: text-bottom;
 }
 #app-wrapper .ui-menubar .ui-menuitem-link .ui-menuitem-icon {
   color: var(--theme-text-primary);
   margin-right: 0.5em;
+  vertical-align: text-bottom;
 }
 #app-wrapper .ui-menubar .ui-menuitem-link:hover {
   background-color: var(--layer-2);
@@ -1609,7 +1611,9 @@
 }
 #app-wrapper .ui-panelmenu .ui-panelmenu-header.ui-state-active > a {
   border: 0px solid var(--layer-1);
-  background-color: var(--layer-1);
+  @include mq($md) {
+    background-color: var(--layer-1);
+  }
   color: var(--theme-text-primary);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -1634,10 +1638,8 @@
   .ui-panelmenu-icon {
   color: var(--theme-text-primary);
 }
-#app-wrapper .ui-panelmenu .ui-menuitem-link-active,
-#app-wrapper .ui-panelmenu .ui-state-active {
-
-  background-color: var(--layer-1) !important;
+#app-wrapper .ui-panelmenu a.ui-menuitem-link-active {
+  background-color: var(--layer-1);
 }
 #app-wrapper .ui-panelmenu .ui-panelmenu-content .ui-menuitem > a:focus {
   outline: 0 none;

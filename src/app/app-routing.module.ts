@@ -5,6 +5,7 @@ import { FormsComponent } from './components/forms/forms.component';
 import { HomeComponent } from './home/home.component';
 import { CodeGuideComponent } from './code-guide/code-guide.component';
 import { ComponentComponent } from './components/component.component';
+import { environment } from 'src/environments/environment';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { showSidebar: false } },
@@ -32,6 +33,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       anchorScrolling: 'enabled',
+      enableTracing: !environment.production,
       paramsInheritanceStrategy: 'always',
     }),
   ],

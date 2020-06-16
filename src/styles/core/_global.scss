@@ -22,7 +22,7 @@ body {
   margin: 0;
 
   font-family: $font-default;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: $font-weight-normal;
   line-height: $lh-default;
   color: $body-color;
@@ -73,49 +73,44 @@ li {
 }
 // Custom Classes
 
-.section-start {
-  height: 0.01rem;
-  margin: -$header-height 0 $header-height;
-  visibility: hidden;
+
+.content-wrapper {
+  display: grid;
+  grid-gap: $spacer;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  padding: 0rem;
+  @include mq($md) {
+    grid-template-columns: 1fr;
+  }
 }
 .container {
   width: 100%;
   max-width: $xl;
   margin: 0 auto;
-  padding: 0rem 1rem 2rem;
+  padding: 0rem $spacer *2 0rem;
   @include mq($md) {
     max-width: 100%;
   }
 }
 .article-container {
   width: 100%;
-  max-width: $xl;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0rem 1rem 2rem;
-  @include mq($md) {
-    max-width: 100%;
-  }
+  padding: 0rem $spacer *2;
 }
-
 .article-types {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0rem 1rem 2rem;
+  padding: 0rem $spacer *2 0rem;
 }
-
-.content-wrapper {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  padding: 1rem 0rem;
-  @include mq($md) {
-    grid-template-columns: 1fr;
-  }
+.section-start {
+  height: 0.01rem;
+  margin: -$header-height 0 $header-height;
+  visibility: hidden;
 }
-
 .inner-page-heading {
-  padding-top: $header-height;
+  padding: $spacer * 2 0rem 0rem;
 }
 
 .g-span,
@@ -141,9 +136,10 @@ li {
 }
 pre[class*="language-"] {
   overflow: auto;
+  font-size: 1.45rem;
 }
 .pattern-preview {
-  margin-top: 1rem;
+  margin: 1rem 0rem;
 }
 
 .b-t {

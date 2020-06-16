@@ -1,7 +1,19 @@
 <div class="article-types">
-  <section id="code-of-america"
-           class="section-start"></section>
-  <h2 class="fragment">Code of America Style Guide</h2>
+  <h2 class="fragment"
+      id="code-of-america">Code of America Style Guide</h2>
+  <div class="pattern-preview">
+    <button class="btn"
+            type="button">Button</button>
+    <button type="submit"
+            class="btn">Submit button</button>
+    <a class="btn">Link button</a>
+    <input type="button"
+           value="Input button"
+           class="btn">
+    <input type="submit"
+           value="Input submit button"
+           class="btn">
+  </div>
   <p-fieldset legend="{{btnState}}"
               [toggleable]="true"
               [collapsed]="true"
@@ -33,6 +45,7 @@
   .btn:hover,
   .btn:focus {{'{'}}
     background-color: #7ab5d6;
+    cursor: pointer;
 {{'}'}}
   a.btn {{'{'}}
     display: inline-block;
@@ -45,18 +58,6 @@
 
   </p-fieldset>
 
-  <div class="pattern-preview">
-    <button class="btn"
-            type="button">Button</button>
-    <button type="submit"
-            class="btn">Submit button</button>
-    <a class="btn">Link button</a>
-    <input type="button"
-           value="Input button"
-           class="btn">
-    <input type="submit"
-           value="Input submit button"
-           class="btn">
-  </div>
+
 
 </div>

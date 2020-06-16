@@ -18,6 +18,7 @@ import { MenuModule } from 'primeng/menu';
 import { MenubarModule } from 'primeng/menubar';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { ButtonModule } from 'primeng/button';
+import { WtfFormsComponent } from './components/forms/wtf-forms/wtf-forms.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ButtonModule } from 'primeng/button';
     CodeGuideComponent,
     BootstrapComponent,
     ComponentComponent,
+    WtfFormsComponent,
   ],
   imports: [
     BrowserModule,

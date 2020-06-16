@@ -23,6 +23,7 @@
           (click)="display = !display"
           pButton
           icon="pi pi-bars"
+          [title]="'Toggle Navigation'"
           aria-label="toggle sidebar"></button>
   <main class="main"
         [ngClass]="{'sidebar-hide': !display}">
