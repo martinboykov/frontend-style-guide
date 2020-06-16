@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  AfterViewInit,
-  ViewChild,
-  ElementRef,
-} from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { PrismService } from 'src/app/shared/prism.service';
 
 @Component({
@@ -41,6 +35,8 @@ export class CodeForAmericaComponent implements OnInit, AfterViewInit {
     this.prismService.highlightAll();
   }
   switchBtnState() {
-    this.btnState = !this.fieldset.collapsed ? 'Hide Snippets' : 'Show Snippets';
+    this.btnState = !this.fieldset.collapsed
+      ? 'Hide Snippets'
+      : 'Show Snippets';
   }
 }
