@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ComponentComponent } from './component.component';
-import { ButtonsComponent } from './buttons/buttons.component';
-import { FormsComponent } from './forms/forms.component';
 
 const routes: Routes = [
   {
@@ -11,10 +9,14 @@ const routes: Routes = [
     children: [
       {
         path: 'buttons',
-        component: ButtonsComponent,
-        data: { showSidebar: true },
+        loadChildren: () =>
+          import('./buttons/buttons.module').then((m) => m.ButtonsModule),
       },
-      { path: 'forms', component: FormsComponent, data: { showSidebar: true } },
+      {
+        path: 'forms',
+        loadChildren: () =>
+          import('./forms/forms.module').then((m) => m.FormsModule),
+      },
       { path: '', redirectTo: 'buttons', pathMatch: 'full' },
     ],
   },
