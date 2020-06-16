@@ -16,7 +16,6 @@ import { MenuModule } from 'primeng/menu';
   imports: [
     CommonModule,
     RouterModule.forChild([]),
-
     ButtonModule,
     InputSwitchModule,
     FormsModule,

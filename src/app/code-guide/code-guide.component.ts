@@ -2,8 +2,6 @@ import {
   Component,
   OnInit,
   AfterViewInit,
-  ViewChild,
-  ElementRef,
 } from '@angular/core';
 import { PrismService } from 'src/app/shared/prism.service';
 

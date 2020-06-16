@@ -1468,13 +1468,13 @@
   border: 0 none;
 }
 #app-wrapper .ui-menu .ui-menu-separator {
-  border: 0px solid var(--layer-3);
+  border: 0px solid var(--layer-0);
   border-width: 0px 0 0 0;
 }
 #app-wrapper .ui-menubar {
   padding: 0;
   background-color: var(--layer-0);
-  border: 0px solid var(--layer-3);
+  border: 0px solid var(--layer-0);
 }
 #app-wrapper .ui-menubar .ui-menuitem-link {
   color: var(--theme-text-primary);
@@ -1492,53 +1492,54 @@
   vertical-align: text-bottom;
 }
 #app-wrapper .ui-menubar .ui-menuitem-link:hover {
-  background-color: var(--layer-2);
+  background-color: var(--theme-color-600);
+  color: var(--theme-text-secondary);
 }
 #app-wrapper .ui-menubar .ui-menuitem-link:hover .ui-menuitem-text {
-  color: var(--theme-text-primary);
+  color: var(--theme-text-secondary);
 }
 #app-wrapper .ui-menubar .ui-menuitem-link:hover .ui-menuitem-icon {
-  color: var(--theme-text-primary);
+  color: var(--theme-text-secondary);
 }
 #app-wrapper .ui-menubar .ui-menuitem-link:focus {
   outline: 0 none;
   outline-offset: 0;
-  box-shadow: inset 0 0 0 0.1em var(--theme-color-100);
+  box-shadow: inset 0 0 0 0.1em var(--layer-0);
 }
 #app-wrapper .ui-menubar .ui-menuitem-link-active {
-  background-color: var(--layer-2);
+  background-color: var(--theme-color);
 }
-#app-wrapper .ui-menubar .ui-menuitem-link.ui-menuitem-link-active {
-  color: var(--theme-text-primary);
+#app-wrapper .ui-menubar a.ui-menuitem-link.ui-menuitem-link-active {
+  color: var(--theme-text-secondary);
   &:hover,
   &:active,
   &:focus {
-    color: var(--theme-text-primary);
+    color: var(--theme-text-secondary);
     .ui-menuitem-text,
     .ui-menuitem-icon {
-      color: var(--theme-text-primary);
+      color: var(--theme-text-secondary);
     }
   }
   .ui-menuitem-text,
   .ui-menuitem-icon {
-    color: var(--theme-text-primary);
+    color: var(--theme-text-secondary);
   }
 }
 #app-wrapper .ui-menubar .ui-menubar-root-list > .ui-menu-separator {
-  border: 0px solid var(--layer-3);
+  border: 0px solid var(--theme-color);
   border-width: 0 0 0 1px;
 }
 #app-wrapper .ui-menubar .ui-submenu-list {
   padding: 0;
   background-color: var(--layer-0);
-  border: 01px solid var(--layer-3);
+  border: 01px solid var(--layer-0);
   box-shadow: none;
 }
 #app-wrapper .ui-menubar .ui-submenu-list .ui-menuitem {
   margin: 0;
 }
 #app-wrapper .ui-menubar .ui-submenu-list .ui-menu-separator {
-  border: 0px solid var(--layer-3);
+  border: 0px solid var(--layer-0);
   border-width: 1px 0 0 0;
 }
 #app-wrapper .ui-menubar .ui-menuitem {
@@ -1548,20 +1549,23 @@
   .ui-menubar
   .ui-menuitem.ui-menuitem-active
   > .ui-menuitem-link-active {
-  background-color: var(--layer-2);
+  background-color: var(--theme-color);
 }
 #app-wrapper .ui-menubar .ui-menuitem-active > .ui-menuitem-link {
   background-color: var(--layer-0);
+  color: var(--theme-text-primary);
   &:hover,
   &:active,
   &:focus {
-    background-color: var(--layer-2);
+    background-color: var(--theme-color-600);
+    color: var(--theme-text-secondary);
+    .ui-menuitem-text,
+    .ui-menuitem-icon,
+    .ui-submenu-text,
+    .ui-submenu-icon {
+      color: var(--theme-text-secondary);
+    }
   }
-}
-#app-wrapper .ui-menubar .ui-menuitem-active > .ui-menuitem-link {
-  background-color: var(--layer-0);
-}
-#app-wrapper .ui-menubar .ui-menuitem-active > .ui-menuitem-link {
   .ui-menuitem-text,
   .ui-menuitem-icon,
   .ui-submenu-text,
@@ -1598,48 +1602,60 @@
   .ui-panelmenu-header:not(.ui-state-active)
   > a:hover {
   outline: 0 none;
-  border: 0px solid var(--layer-1);
-  background-color: var(--layer-1);
-  color: var(--theme-text-primary);
+  border: 0px solid var(--theme-color-600);
+  background-color: var(--theme-color-600);
+  color: var(--theme-text-secondary);
 }
 #app-wrapper
   .ui-panelmenu
   .ui-panelmenu-header:not(.ui-state-active)
   > a:hover
   .ui-panelmenu-icon {
-  color: var(--theme-text-primary);
+  color: var(--theme-text-secondary);
 }
 #app-wrapper .ui-panelmenu .ui-panelmenu-header.ui-state-active > a {
-  border: 0px solid var(--layer-1);
-  @include mq($md) {
-    background-color: var(--layer-1);
-  }
-  color: var(--theme-text-primary);
+  border: 0px solid var(--theme-color);
+  background-color: var(--theme-color);
+  color: var(--theme-text-secondary);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-}
-#app-wrapper
-  .ui-panelmenu
-  .ui-panelmenu-header.ui-state-active
-  > a
   .ui-panelmenu-icon {
-  color: var(--theme-text-primary);
-}
-#app-wrapper .ui-panelmenu .ui-panelmenu-header.ui-state-active > a:hover {
-  outline: 0 none;
-  border: 0px solid var(--layer-1);
-  background-color: var(--layer-1);
-  color: var(--theme-text-primary);
-}
-#app-wrapper
-  .ui-panelmenu
-  .ui-panelmenu-header.ui-state-active
-  > a:hover
-  .ui-panelmenu-icon {
-  color: var(--theme-text-primary);
+    color: var(--theme-text-secondary);
+  }
+  &:not(.ui-menuitem-link-active) {
+    border: 0px solid var(--layer-0);
+    background-color: var(--layer-0);
+    color: var(--theme-text-primary);
+    .ui-panelmenu-icon {
+      color: var(--theme-text-primary);
+    }
+  }
+  &:hover {
+    outline: 0 none;
+    border: 0px solid var(--theme-color-600);
+    background-color: var(--theme-color-600);
+    color: var(--theme-text-secondary);
+    .ui-panelmenu-icon {
+      color: var(--theme-text-secondary);
+    }
+  }
+  @include mq($md) {
+    border: 0px solid var(--theme-color);
+    background-color: var(--theme-color);
+    color: var(--theme-text-secondary);
+    &:not(.ui-menuitem-link-active) {
+      border: 0px solid var(--theme-color);
+      background-color: var(--theme-color);
+      color: var(--theme-text-secondary);
+      .ui-panelmenu-icon {
+        color: var(--theme-text-secondary);
+      }
+    }
+  }
 }
 #app-wrapper .ui-panelmenu a.ui-menuitem-link-active {
-  background-color: var(--layer-1);
+  background-color: var(--theme-color);
+  color: var(--theme-text-secondary);
 }
 #app-wrapper .ui-panelmenu .ui-panelmenu-content .ui-menuitem > a:focus {
   outline: 0 none;
@@ -1654,7 +1670,7 @@
 #app-wrapper .ui-panelmenu .ui-panelmenu-content {
   padding: 0;
   background-color: var(--layer-0);
-  border: 0px solid var(--layer-3);
+  border: 0px solid var(--layer-0);
   margin-top: 0;
   position: static;
   border-top: 0 none;
@@ -1668,17 +1684,20 @@
   }
   .ui-menuitem-link-active,
   .ui-menuitem-link:hover {
-    background-color: var(--layer-1);
+    background-color: var(--theme-color);
     .ui-menuitem-text,
     .ui-menuitem-icon {
-      color: var(--theme-text-primary);
+      color: var(--theme-text-secondary);
     }
+  }
+  .ui-menuitem-link:hover {
+    background-color: var(--theme-color-600);
   }
 }
 #app-wrapper .ui-slidemenu {
   padding: 0;
   background-color: var(--layer-0);
-  border: 1px solid var(--layer-3);
+  border: 1px solid var(--layer-0);
 }
 #app-wrapper .ui-slidemenu .ui-menuitem-link {
   // padding: 0.2rem 1rem;

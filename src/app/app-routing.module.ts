@@ -11,8 +11,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent, data: { showSidebar: false } },
   {
     path: 'code-guide',
-    component: CodeGuideComponent,
-    data: { showSidebar: false },
+    loadChildren: () => import('./code-guide/code-guide.module').then(m => m.CodeGuideModule)
   },
   {
     path: 'components',

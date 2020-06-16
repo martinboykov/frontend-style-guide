@@ -10,7 +10,7 @@ import { FormsComponent } from './components/forms/forms.component';
 import { FieldsetModule } from 'primeng/fieldset';
 import { CodeForAmericaComponent } from './components/buttons/code-for-america/code-for-america.component';
 import { HomeComponent } from './home/home.component';
-import { CodeGuideComponent } from './code-guide/code-guide.component';
+// import { CodeGuideComponent } from './code-guide/code-guide.component';
 import { BootstrapComponent } from './components/buttons/bootstrap/bootstrap.component';
 import { ComponentComponent } from './components/component.component';
 import { SidebarModule } from 'primeng/sidebar';
@@ -27,7 +27,7 @@ import { WtfFormsComponent } from './components/forms/wtf-forms/wtf-forms.compon
     FormsComponent,
     CodeForAmericaComponent,
     HomeComponent,
-    CodeGuideComponent,
+    // CodeGuideComponent,
     BootstrapComponent,
     ComponentComponent,
     WtfFormsComponent,

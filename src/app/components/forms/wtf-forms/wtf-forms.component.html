@@ -51,7 +51,7 @@
   color: #eee;
   text-align: center;
   background-color: #eee;
-  background-size: 50% 50%;
+  background-size: 70% 70%;
   background-position: center center;
   background-repeat: no-repeat;
   user-select: none;
@@ -122,6 +122,18 @@
 //   transform-origin: left bottom;
 // {{'}'}}
 
+/* Variation 4 - using ::after and border */
+// .checkbox input:checked ~ .control-indicator::after {{'{'}}
+//   content: "";
+//   position: absolute;
+//   left: 30%;
+//   top: 5%;
+//   height: 1.3rem;
+//   width: 0.8rem;
+//   border-right: 0.3rem solid #fff;
+//   border-bottom: 0.3rem solid #fff;
+//   transform: rotate(45deg);
+// {{'}'}}
 
        </code>
     </pre>
