@@ -1,35 +1,38 @@
 @import "./core/variables";
 @import "./core/root";
-.btn {
-  /* Positioning */
 
-  /* Box-model */
-  height: 40px;
-  margin: 0px 8px 4px 0px;
-  padding: 0px 26px;
+.code-of-america{
+  .btn {
+    /* Positioning */
 
-  /* Typography */
-  font-family: $font-default;
-  color: white;
+    /* Box-model */
+    height: 40px;
+    margin: 0px 8px 4px 0px;
+    padding: 0px 26px;
 
-  /* Visual */
-  background-color: #399fd3;
-  border: none;
-  border-radius: 4px;
-  /* Misc */
-  overflow: visible; /* the overflow property removes extra width in IE */
-}
-.btn:hover,
-.btn:focus {
-  background-color: #7ab5d6;
-  cursor: pointer;
-}
-
-a.btn {
-  display: inline-block;
-  line-height: 40px;
-  &:hover,
-  &:focus {
+    /* Typography */
+    font-family: $font-default;
     color: white;
+
+    /* Visual */
+    background-color: #399fd3;
+    border: none;
+    border-radius: 4px;
+    /* Misc */
+    overflow: visible; /* the overflow property removes extra width in IE */
+  }
+  .btn:hover,
+  .btn:focus {
+    background-color: #7ab5d6;
+    cursor: pointer;
+  }
+
+  a.btn {
+    display: inline-block;
+    line-height: 40px;
+    &:hover,
+    &:focus {
+      color: white;
+    }
   }
 }

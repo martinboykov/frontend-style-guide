@@ -885,7 +885,10 @@
   color: var(--theme-text-primary);
 }
 #app-wrapper .ui-fieldset .ui-fieldset-legend a {
-  padding: 0.571em 1em;
+  padding: 0.3em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--layer-3);
   color: var(--theme-text-secondary);
   background-color: var(--theme-color);
