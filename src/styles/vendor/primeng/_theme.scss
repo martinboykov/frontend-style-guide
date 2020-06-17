@@ -1677,13 +1677,12 @@
 }
 #app-wrapper .ui-panelmenu .ui-panelmenu-content .ui-menuitem {
   margin: 0;
-}
-#app-wrapper .ui-panelmenu .ui-panelmenu-content .ui-menuitem {
   .ui-menuitem-link {
     color: var(--theme-text-primary);
   }
   .ui-menuitem-link-active,
   .ui-menuitem-link:hover {
+    color: var(--theme-text-secondary);
     background-color: var(--theme-color);
     .ui-menuitem-text,
     .ui-menuitem-icon {

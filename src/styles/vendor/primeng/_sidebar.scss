@@ -28,17 +28,17 @@
   .ui-submenu-list {
     margin: 0;
     .ui-menuitem-link {
-      padding-left: 3rem;
+      padding: .8rem 2rem .8rem 3rem;
     }
   }
   .ui-submenu-list .ui-submenu-list {
     .ui-menuitem-link {
-      padding-left: 4rem;
+      padding: .6rem 2rem .6rem 4rem;
     }
   }
   .ui-submenu-list .ui-submenu-list .ui-submenu-list {
     .ui-menuitem-link {
-      padding-left: 5rem;
+      padding: .4rem 2rem .4rem 5rem;
     }
   }
 }

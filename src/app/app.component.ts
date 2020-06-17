@@ -44,6 +44,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.resizer.resizeObserverInit();
     this.router.events
+      // get route
       .pipe(
         filter((e) => e instanceof NavigationStart),
         tap((a: NavigationStart) => {
@@ -51,6 +52,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         }),
         concatMap(() => this.resizer.isMobileSub$)
       )
+      // get window width
       .pipe(
         distinctUntilChanged(),
         tap((isMobile) => (this.mobile = isMobile)),
@@ -63,6 +65,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         }),
         concatMap(() => this.router.events)
       )
+      // get sidebar state
       .pipe(
         filter((e) => e instanceof NavigationEnd),
         map(() => this.activatedRoute),

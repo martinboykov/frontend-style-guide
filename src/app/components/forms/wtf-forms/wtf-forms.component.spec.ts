@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WtfFormsComponent } from './wtf-forms.component';
+import { SafeHtmlPipe } from 'src/app/shared/safe-html.pipe';
 
 describe('WtfFormsComponent', () => {
   let component: WtfFormsComponent;
@@ -8,9 +9,8 @@ describe('WtfFormsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WtfFormsComponent ]
-    })
-    .compileComponents();
+      declarations: [WtfFormsComponent, SafeHtmlPipe],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

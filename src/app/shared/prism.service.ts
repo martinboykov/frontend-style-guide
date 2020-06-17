@@ -25,7 +25,7 @@ export class PrismService {
       Prism.highlightAll();
     }
   }
-  highlight(value, type = 'markup') {
+  highlight(value, type: string = 'markup') {
     if (isPlatformBrowser(this.platformId)) {
       switch (type) {
         case 'css':
