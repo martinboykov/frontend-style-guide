@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 })
 export class MainNavService {
   constructor(private router: Router) {}
-  getSideNav(isMobile) {
+  getSideNav(isMobile, endRoute) {
     if (isMobile) {
       return [
         {
@@ -22,21 +22,21 @@ export class MainNavService {
         {
           label: 'Components',
           routerLinkActiveOptions: { exact: false },
-          expanded: this.checkActiveState('/components'),
+          expanded: this.checkActiveState('/components', endRoute),
           items: [
             {
               label: 'Buttons',
               title: 'components/buttons',
               routerLink: 'components/buttons',
               routerLinkActiveOptions: { exact: true },
-              expanded: this.checkActiveState('/components/buttons'),
+              expanded: this.checkActiveState('/components/buttons', endRoute),
             },
             {
               label: 'Forms',
               title: 'components/forms',
               routerLink: 'components/forms',
               routerLinkActiveOptions: { exact: true },
-              expanded: this.checkActiveState('/components/forms'),
+              expanded: this.checkActiveState('/components/forms', endRoute),
             },
           ],
         },
@@ -48,14 +48,14 @@ export class MainNavService {
           title: 'components/buttons',
           routerLink: 'components/buttons',
           routerLinkActiveOptions: { exact: true },
-          expanded: this.checkActiveState('/components/buttons/'),
+          expanded: this.checkActiveState('/components/buttons/', endRoute),
         },
         {
           label: 'Forms',
           title: 'components/forms',
           routerLink: 'components/forms',
           routerLinkActiveOptions: { exact: true },
-          expanded: this.checkActiveState('/components/forms/'),
+          expanded: this.checkActiveState('/components/forms/', endRoute),
         },
       ];
     }
@@ -88,8 +88,8 @@ export class MainNavService {
       ];
     }
   }
-  checkActiveState(givenLink) {
-    if (this.router.url.indexOf(givenLink) === -1) {
+  checkActiveState(givenLink, endRoute) {
+    if (endRoute.indexOf(givenLink) === -1) {
       return false;
     } else {
       return true;

@@ -1,7 +1,20 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MenuItem } from 'primeng/api/menuitem';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { filter, map, mergeMap, tap, concatMap, distinctUntilChanged } from 'rxjs/operators';
+import {
+  Router,
+  ActivatedRoute,
+  NavigationEnd,
+  RoutesRecognized,
+  NavigationStart,
+} from '@angular/router';
+import {
+  filter,
+  map,
+  mergeMap,
+  tap,
+  concatMap,
+  distinctUntilChanged,
+} from 'rxjs/operators';
 import { ResizeService } from './shared/resize.service';
 import { MainNavService } from './shared/main-nav.service';
 
@@ -21,6 +34,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   observer: any;
   mobile: boolean;
   appInit = false;
+  endRoute: string;
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -29,19 +43,22 @@ export class AppComponent implements OnInit, AfterViewInit {
   ) {}
   ngOnInit() {
     this.resizer.resizeObserverInit();
-    this.resizer.isMobileSub$
+    this.router.events
+      .pipe(
+        filter((e) => e instanceof NavigationStart),
+        tap((a: NavigationStart) => {
+          this.endRoute = a.url;
+        }),
+        concatMap(() => this.resizer.isMobileSub$)
+      )
       .pipe(
         distinctUntilChanged(),
         tap((isMobile) => (this.mobile = isMobile)),
         tap((isMobile) => {
-          this.items = this.navService.getSideNav(isMobile);
+          this.items = this.navService.getSideNav(isMobile, this.endRoute);
         }),
         tap(() => {
-          const data = {
-            showSidebar: this.router.routerState.snapshot.url.includes(
-              'component'
-            ),
-          };
+          const data = this.endRoute.includes('component');
           this.showSidebarFn(data);
         }),
         concatMap(() => this.router.events)
