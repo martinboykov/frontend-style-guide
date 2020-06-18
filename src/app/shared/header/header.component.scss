@@ -9,10 +9,11 @@ header {
   display: flex;
   flex-flow: row nowrap;
   height: $header-height;
-  padding: 0 1rem;
+  padding: 0 $spacer;
   align-items: center;
   background: white;
   box-shadow: 0 1px 8px 0 var(--layer-3);
+  transition: padding .4s ease;
   .menubar {
     margin-left: 5rem;
     transition: margin-left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -20,6 +21,9 @@ header {
   .switch {
     margin-left: auto;
     line-height: 1;
+  }
+  @include mq($md) {
+    padding: 0rem $spacer / 2;
   }
 }
 :host-context(.is-desktop){

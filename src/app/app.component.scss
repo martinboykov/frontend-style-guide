@@ -27,10 +27,14 @@
   button.sidebar-toggle {
     position: fixed;
     top: 0.65rem;
-    left: 1.65rem;
+    left: $spacer * 2;
 
     color: var(--theme-text-secondary);
     z-index: 1003;
+    transition: left .4s ease;
+    @include mq($md) {
+      left: $spacer / 2;
+    }
   }
 
   main {

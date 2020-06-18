@@ -73,41 +73,59 @@ li {
 }
 // Custom Classes
 
-
 .content-wrapper {
   display: grid;
   grid-gap: $spacer;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
   padding: 0rem;
+  max-height: 50vh;
+  overflow: auto;
+  &.code-guide {
+    max-height: 100%;
+    overflow: visible;
+  }
   @include mq($md) {
     grid-template-columns: 1fr;
+    max-height: 100%;
+    overflow: visible;
   }
 }
 .container {
   width: 100%;
   max-width: $xl;
   margin: 0 auto;
-  padding: 0rem $spacer *2 0rem;
+  padding: 0rem $spacer * 2 0rem;
+  transition: padding .4s ease;
   @include mq($md) {
     max-width: 100%;
+    padding: 0rem $spacer / 2 0rem;
   }
 }
 .article-container {
   width: 100%;
   max-width: 100%;
-  margin: 0 auto;
-  padding: 0rem $spacer *2;
+  margin: 0 auto $spacer * 2;
+  padding: 0rem $spacer * 2 $spacer;
+
+  background-color: var(--theme-color);
+  color: var(--theme-text-secondary);
+  transition: padding .4s ease;
+  @include mq($md) {
+    padding: 0rem $spacer / 2 $spacer;
+  }
 }
 .article-types {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0rem $spacer *2 0rem;
+  padding: 0rem $spacer * 2 0rem;
+  transition: padding .4s ease;
+  @include mq($md) {
+    padding: 0rem $spacer / 2 0rem;
+  }
 }
-.section-start {
-  height: 0.01rem;
-  margin: -$header-height 0 $header-height;
-  visibility: hidden;
+.article {
+  margin-top: $spacer;
 }
 .inner-page-heading {
   padding: $spacer * 2 0rem 0rem;
@@ -136,12 +154,14 @@ li {
 }
 pre[class*="language-"] {
   overflow: auto;
-  font-size: .9em;
+  font-size: 0.9em;
+  border-radius: 0;
 }
 .pattern-preview {
   margin: 1rem 0rem;
 }
 
+// borders
 .b-t {
   border-top: 0.2rem solid $black;
 }

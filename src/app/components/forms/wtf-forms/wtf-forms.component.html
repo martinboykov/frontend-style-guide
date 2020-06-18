@@ -1,9 +1,13 @@
 <div class="article-types wtf-forms">
   <h2 class="fragment"
-      id="wtf-forms">Wtf Forms</h2>
-  <h3>Checkbox</h3>
+      id="wtf-forms">WTF Forms</h2>
+  <h3 class="article">Checkbox</h3>
   <div class="pattern-preview"
-       [innerHTML]="html | safeHtml">
+       [innerHTML]="html['checkbox'] | safeHtml">
+  </div>
+  <h3 class="article">Radio</h3>
+  <div class="pattern-preview"
+       [innerHTML]="html['radio'] | safeHtml">
   </div>
   <p-fieldset legend="{{btnState}}"
               [toggleable]="true"
@@ -14,16 +18,40 @@
       <div class="highlight">
         <strong>HTML:</strong>
         <pre>
-      <code class="language-markup" [innerHTML]="htmlToken"></code>
+      <code class="language-markup" [innerHTML]="htmlToken['checkbox']"></code>
+      <code class="language-markup" [innerHTML]="htmlToken['radio']"></code>
     </pre>
       </div>
       <div class="highlight">
         <strong>CSS:</strong>
         <pre>
-      <code class="language-css" [innerHtml]="cssToken"></code>
+      <code class="language-css" [innerHtml]="cssToken['checkboxAndRadio']"></code>
     </pre>
       </div>
     </div>
-
+  </p-fieldset>
+  <h3 class="article">Select</h3>
+  <div class="pattern-preview"
+       [innerHTML]="html['select'] | safeHtml">
+  </div>
+  <p-fieldset legend="{{btnState}}"
+              [toggleable]="true"
+              [collapsed]="true"
+              (click)="switchBtnState()"
+              #fieldset>
+    <div class="content-wrapper">
+      <div class="highlight">
+        <strong>HTML:</strong>
+        <pre>
+      <code class="language-markup" [innerHTML]="htmlToken['select']"></code>
+    </pre>
+      </div>
+      <div class="highlight">
+        <strong>CSS:</strong>
+        <pre>
+      <code class="language-css" [innerHtml]="cssToken['select']"></code>
+    </pre>
+      </div>
+    </div>
   </p-fieldset>
 </div>

@@ -883,6 +883,10 @@
   border: 1px solid var(--layer-3);
   background-color: var(--layer-0);
   color: var(--theme-text-primary);
+  padding: $spacer;
+  @include mq($md) {
+    padding: $spacer / 2;
+  }
 }
 #app-wrapper .ui-fieldset .ui-fieldset-legend a {
   padding: 0.3em 1em;
