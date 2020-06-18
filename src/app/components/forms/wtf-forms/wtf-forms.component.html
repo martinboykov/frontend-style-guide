@@ -54,4 +54,28 @@
       </div>
     </div>
   </p-fieldset>
+  <h3 class="article">File</h3>
+  <div class="pattern-preview"
+       [innerHTML]="html['file'] | safeHtml">
+  </div>
+  <p-fieldset legend="{{btnState}}"
+              [toggleable]="true"
+              [collapsed]="true"
+              (click)="switchBtnState()"
+              #fieldset>
+    <div class="content-wrapper">
+      <div class="highlight">
+        <strong>HTML:</strong>
+        <pre>
+      <code class="language-markup" [innerHTML]="htmlToken['file']"></code>
+    </pre>
+      </div>
+      <div class="highlight">
+        <strong>CSS:</strong>
+        <pre>
+      <code class="language-css" [innerHtml]="cssToken['file']"></code>
+    </pre>
+      </div>
+    </div>
+  </p-fieldset>
 </div>

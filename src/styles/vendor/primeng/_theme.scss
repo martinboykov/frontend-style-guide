@@ -1491,12 +1491,12 @@
 }
 #app-wrapper .ui-menubar .ui-menuitem-link .ui-menuitem-text {
   color: var(--theme-text-primary);
-  vertical-align: text-bottom;
+  vertical-align: middle;
 }
 #app-wrapper .ui-menubar .ui-menuitem-link .ui-menuitem-icon {
   color: var(--theme-text-primary);
   margin-right: 0.5em;
-  vertical-align: text-bottom;
+  vertical-align: middle;
 }
 #app-wrapper .ui-menubar .ui-menuitem-link:hover {
   background-color: var(--theme-color-600);
