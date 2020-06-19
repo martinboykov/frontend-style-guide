@@ -1,0 +1,10 @@
+// modifications
+
+#app-wrapper .ui-button.ui-button-icon-only {
+  &.sidebar-toggle {
+    border: 0rem;
+    .ui-button-text {
+      padding: 0.4287em;
+    }
+  }
+}
