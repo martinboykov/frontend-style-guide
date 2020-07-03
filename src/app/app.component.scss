@@ -26,9 +26,9 @@
   }
   button.sidebar-toggle {
     position: fixed;
-    top: .7rem;
+    top: 1rem;
     left: $spacer * 2;
-
+    height: 3rem;
     color: var(--theme-text-secondary);
     z-index: 1003;
     transition: left .4s ease;
