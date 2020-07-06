@@ -15,8 +15,8 @@ import {
   concatMap,
   distinctUntilChanged,
 } from 'rxjs/operators';
-import { ResizeService } from './shared/resize.service';
-import { MainNavService } from './shared/main-nav.service';
+import { ResizeService } from './core/resize.service';
+import { MainNavService } from './core/main-nav.service';
 
 @Component({
   selector: 'app-root',

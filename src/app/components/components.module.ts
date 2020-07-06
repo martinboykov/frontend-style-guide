@@ -5,11 +5,7 @@ import { ComponentsRoutingModule } from './components-routing.module';
 import { FieldsetModule } from 'primeng/fieldset';
 
 @NgModule({
-  declarations: [
-    ComponentComponent,
-
-
-  ],
+  declarations: [ComponentComponent],
   imports: [CommonModule, ComponentsRoutingModule, FieldsetModule],
 })
 export class ComponentsModule {}

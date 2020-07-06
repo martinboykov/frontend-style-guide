@@ -3,7 +3,7 @@ import {
   OnInit,
   AfterViewInit,
 } from '@angular/core';
-import { PrismService } from 'src/app/shared/prism.service';
+import { PrismService } from 'src/app/core/prism.service';
 
 @Component({
   selector: 'app-code-guide',
